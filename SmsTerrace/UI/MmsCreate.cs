@@ -123,7 +123,17 @@ namespace HzTerrace.UI
                 MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (InitInfo.MMS_MAX_SIZE/1024)+"KB");
                 return;
             }
-           
+
+            if (textBoxX1.Text.Trim().Length<1||textBoxX2.Text.Trim().Length<1||integerInput1.Value<1)
+            {
+                MessageBox.Show("发送参数不正确！");
+                return;
+            }
+            if (phoneNums.Trim().TrimEnd(',').Length < 1)
+            {
+                MessageBox.Show("没有可发送号码，请确认号码导入正确");
+                return;
+            }
 
            backgroundWorker1.RunWorkerAsync(dic);
           this.Parent.Enabled = false;
@@ -181,11 +191,7 @@ namespace HzTerrace.UI
             string mmsUserId = textBoxX1.Text;
             string mmsPwd = textBoxX2.Text;
             int mmsBid = integerInput1.Value;
-            if (phoneNums.Trim().TrimEnd(',').Length<1)
-            {
-                MessageBox.Show("没有可发送号码，请确认号码导入正确");
-                return;
-            }
+  
             string[] sArr = new string[] { mmsUserId, mmsPwd, mmsBid.ToString(), phoneNums, Convert.ToBase64String(zipByte), " ", " ", "111" };
             SmsTerrace.ClientWebServer.OpRespOfSendResp opR= fk.MmsToService(sArr);
             e.Result = opR;
