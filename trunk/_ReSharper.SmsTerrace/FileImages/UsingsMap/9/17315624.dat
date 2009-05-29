@@ -1,0 +1,1 @@
+JetBrains.ReSharper.Psi.CSharp4JetBrains.ReSharper.Psi.CSharp.Impl.CSharpUsingsInforusing System;using System.Collections.Generic;using System.Windows.Forms;using SmsTerrace.UI;namespace SmsTerrace{}

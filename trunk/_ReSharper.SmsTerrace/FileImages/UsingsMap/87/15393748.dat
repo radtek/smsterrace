@@ -1,0 +1,1 @@
+JetBrains.ReSharper.Psi.CSharp4JetBrains.ReSharper.Psi.CSharp.Impl.CSharpUsingsInfoÅusing System;using System.Data;using System.Collections.Generic;using LTP.Common;using SmsTerrace.Model;namespace SmsTerrace.BLL{}

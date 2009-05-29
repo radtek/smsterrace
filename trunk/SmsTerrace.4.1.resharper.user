@@ -1,0 +1,89 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer>
+      <setting name="UsedSolutionBuilderID">0</setting>
+    </integer>
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">False</setting>
+      <setting name="SolutionAnalysisEnabled">True</setting>
+    </boolean>
+  </SettingsComponent>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:SmsRecord.cs" caret="442" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:QueryInfo.cs" caret="432" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:MoPendingDeal.cs" caret="673" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:ReportSubmit.cs" caret="0" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:SubmitMsg.cs" caret="239" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Comm/f:ConfigHelper.cs" caret="289" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Comm/f:DataCache.cs" caret="356" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/d:transport/d:oldHzSmsWebSer/f:UpSms.cs" caret="310" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:DataBase.cs" caret="755" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:接收记录.cs" caret="137" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:Model/f:短信记录.cs" caret="41" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.Designer.cs" caret="119064" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:短信记录Service.cs" caret="2711" scrollPosition="0|69" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:接收记录Manage.cs" caret="1738" scrollPosition="0|74" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:DbHelperOleDb.cs" caret="8465" scrollPosition="0|235" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:接收记录Service.cs" caret="5649" scrollPosition="0|170" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:ProgressPanel.Designer.cs" caret="1991" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:UserLogin.cs" caret="410" scrollPosition="0|7" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:ProgressPanel.cs" caret="184" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:LoginFrm.cs" caret="172" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:NewDbHelperOleDb.cs" caret="18975" scrollPosition="0|487" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="3667" scrollPosition="0|83" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:ExcelOperate.cs" caret="194" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/f:Program.cs" caret="279" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsOperate.cs" caret="1354" scrollPosition="0|6" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsWebServiceMirror.cs" caret="945" scrollPosition="0|7" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:短信记录Manage.cs" caret="2815" scrollPosition="0|80" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/f:app.config" caret="858" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="431" scrollPosition="0|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/f:Form1.cs" caret="932" scrollPosition="0|25" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:NewDbHelperOleDb.cs" caret="1404" scrollPosition="0|53" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:NewDbHelperOleDb.cs" caret="1404" scrollPosition="0|53" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DBUtility/f:NewDbHelperOleDb.cs" caret="1558" scrollPosition="0|29" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsOperate.cs" caret="690" scrollPosition="0|17" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="2683" scrollPosition="0|57" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsOperate.cs" caret="1369" scrollPosition="0|25" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:ExcelOperate.cs" caret="1299" scrollPosition="8|18" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="3896" scrollPosition="0|83" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="897" scrollPosition="0|16" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="2474" scrollPosition="0|54" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="2114" scrollPosition="0|39" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/d:UseCtrl/f:OperFilePanel.cs" caret="3754" scrollPosition="0|85" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsOperate.cs" caret="1189" scrollPosition="0|31" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:ExcelOperate.cs" caret="900" scrollPosition="8|18" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="16389" scrollPosition="0|457" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="16352" scrollPosition="0|457" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="1590" scrollPosition="0|49" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:DAL/f:ExcelOperate.cs" caret="572" scrollPosition="19|0" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="6878" scrollPosition="0|192" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="12230" scrollPosition="0|339" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsWebServiceMirror.cs" caret="579" scrollPosition="0|9" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:BLL/f:SmsWebServiceMirror.cs" caret="779" scrollPosition="0|9" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="15513" scrollPosition="0|426" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="12666" scrollPosition="0|345" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="12826" scrollPosition="0|351" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="13644" scrollPosition="0|369" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="13749" scrollPosition="0|366" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/f:Form1.cs" caret="687" scrollPosition="0|15" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/f:Form1.cs" caret="1034" scrollPosition="0|28" />
+      <File id="CD78865E-0AAE-49CE-B252-E1D4B901CAC2/d:UI/f:SmsFrm.cs" caret="431" scrollPosition="0|0" />
+    </RecentEdits>
+  </RecentFiles>
+  <UnitTestRunner>
+    <CustomStartDirectory>
+    </CustomStartDirectory>
+    <UseShadowCopy>True</UseShadowCopy>
+    <UseCustomFolder>False</UseCustomFolder>
+    <EnableUnitTesting>True</EnableUnitTesting>
+    <Providers />
+  </UnitTestRunner>
+</Configuration>
