@@ -1,0 +1,1 @@
+JetBrains.ReSharper.Psi.CSharp4JetBrains.ReSharper.Psi.CSharp.Impl.CSharpUsingsInfoéusing System;using System.Collections;using System.Collections.Specialized;using System.Data;using System.Data.SqlClient;using System.Configuration;using System.Data.Common;using System.Collections.Generic;namespace hz.sms.DBUtility{}

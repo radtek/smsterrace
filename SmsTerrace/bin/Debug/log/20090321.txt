@@ -1,0 +1,7 @@
+[2009-03-21 17:26:36]	Error	后台发送短信时:System.Net.WebException: 操作超时
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.Web.Services.Protocols.SoapHttpClientProtocol.Invoke(String methodName, Object[] parameters)
+   在 SmsTerrace.SmsWebService.Service.Send(String UserID, String Password, String BusinessId, String MsgContent, String Mobiles, String SendTime) 位置 D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\Web References\SmsWebService\Reference.cs:行号 268
+   在 SmsTerrace.UI.SmsFrm.backgroundWorker2_DoWork(Object sender, DoWorkEventArgs e) 位置 D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\UI\SmsFrm.cs:行号 355
+[2009-03-21 17:26:36]	Error	信息:System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 SmsTerrace.UI.SmsFrm.backgroundWorker2_RunWorkerCompleted(Object sender, RunWorkerCompletedEventArgs e) 位置 D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\UI\SmsFrm.cs:行号 372

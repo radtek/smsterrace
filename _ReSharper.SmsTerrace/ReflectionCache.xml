@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Assemblies Version="1073741836">
+  <Assembly Name="JetBrains.Annotations, Version=4.1.933.3, Culture=neutral, PublicKeyToken=1010a0d8d6380325" Image="2fd0cbbf-7596-415e-924a-c6f50e1f088d" Timestamp="633559454920000000" XmlDocIndexTimestamp="633559454920000000" />
+  <Assembly Name="DevComponents.DotNetBar2, Version=7.7.0.4, Culture=neutral, PublicKeyToken=5fd520d36328f741" Image="473a4194-bc88-4387-b88f-589e3d3eef3c" Timestamp="633677587100000000" XmlDocIndexTimestamp="633674154440000000" />
+</Assemblies>

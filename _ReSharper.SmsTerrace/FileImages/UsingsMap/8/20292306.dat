@@ -1,0 +1,1 @@
+JetBrains.ReSharper.Psi.CSharp4JetBrains.ReSharper.Psi.CSharp.Impl.CSharpUsingsInfoóusing System;using System.Collections.Generic;using System.ComponentModel;using System.Data;using System.Drawing;using System.IO;using System.Text;using System.Windows.Forms;using SmsTerrace.UI;using SmsTerrace.UI.UseCtrl;namespace SmsTerrace{}

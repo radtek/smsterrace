@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://HzTerrace.org/" xmlns:s1="http://HzTerrace.org/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://HzTerrace.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://HzTerrace.org/">
+      <s:element name="MmsToService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="paramList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MmsToServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MmsToServiceResult" type="tns:OpRespOfSendResp" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OpRespOfSendResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="tns:OpResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReturnResult" type="tns:SendResp" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OpResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Resp" type="tns:RespCode" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="RespDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="RespCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="OTHER" />
+          <s:enumeration value="PRO" />
+          <s:enumeration value="OK" />
+          <s:enumeration value="UNKNOWN" />
+          <s:enumeration value="ERROR_PARAM" />
+          <s:enumeration value="ERROR_SEND_TIME" />
+          <s:enumeration value="ERROR_CALLER" />
+          <s:enumeration value="ERROR_USER_ID_OR_PWD" />
+          <s:enumeration value="ERROR_BID" />
+          <s:enumeration value="ERROR_BALANCE" />
+          <s:enumeration value="ERROR_IP" />
+          <s:enumeration value="ERROR_SYSTEM" />
+          <s:enumeration value="ERROR_OTHER" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="SendResp">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RespDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BlackMobiles" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorDesc" type="tns:ErrorCode" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMobiles" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Result" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubmitID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ErrorCode">
+        <s:restriction base="s:string">
+          <s:enumeration value="BALANCE_ERROR" />
+          <s:enumeration value="BID_ERROR" />
+          <s:enumeration value="CALLER_ERROR" />
+          <s:enumeration value="MSG_LENGTH_ERROR" />
+          <s:enumeration value="MSG_TYPE_ERROR" />
+          <s:enumeration value="OK" />
+          <s:enumeration value="SEND_TIME_ERROR" />
+          <s:enumeration value="SOURCE_ID_ERROR" />
+          <s:enumeration value="SOURCE_ID_LENGTH_ERROR" />
+          <s:enumeration value="SYSTEM_ERROR" />
+          <s:enumeration value="USER_ID_OR_PWD_ERROR" />
+          <s:enumeration value="PARAM_ERROR" />
+          <s:enumeration value="OTHER" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="OpRespOfSendResp" nillable="true" type="tns:OpRespOfSendResp" />
+    </s:schema>
+    <s:schema targetNamespace="http://HzTerrace.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="MmsToServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:MmsToService" />
+  </wsdl:message>
+  <wsdl:message name="MmsToServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:MmsToServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="MmsToServiceHttpGetIn">
+    <wsdl:part name="paramList" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="MmsToServiceHttpGetOut">
+    <wsdl:part name="Body" element="tns:OpRespOfSendResp" />
+  </wsdl:message>
+  <wsdl:message name="MmsToServiceHttpPostIn">
+    <wsdl:part name="paramList" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="MmsToServiceHttpPostOut">
+    <wsdl:part name="Body" element="tns:OpRespOfSendResp" />
+  </wsdl:message>
+  <wsdl:portType name="ClientServerSoap">
+    <wsdl:operation name="MmsToService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">彩信z</wsdl:documentation>
+      <wsdl:input message="tns:MmsToServiceSoapIn" />
+      <wsdl:output message="tns:MmsToServiceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientServerHttpGet">
+    <wsdl:operation name="MmsToService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">彩信z</wsdl:documentation>
+      <wsdl:input message="tns:MmsToServiceHttpGetIn" />
+      <wsdl:output message="tns:MmsToServiceHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ClientServerHttpPost">
+    <wsdl:operation name="MmsToService">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">彩信z</wsdl:documentation>
+      <wsdl:input message="tns:MmsToServiceHttpPostIn" />
+      <wsdl:output message="tns:MmsToServiceHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientServerSoap" type="tns:ClientServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MmsToService">
+      <soap:operation soapAction="http://HzTerrace.org/MmsToService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientServerSoap12" type="tns:ClientServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MmsToService">
+      <soap12:operation soapAction="http://HzTerrace.org/MmsToService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientServerHttpGet" type="tns:ClientServerHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="MmsToService">
+      <http:operation location="/MmsToService" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientServerHttpPost" type="tns:ClientServerHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="MmsToService">
+      <http:operation location="/MmsToService" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientServer">
+    <wsdl:port name="ClientServerSoap" binding="tns:ClientServerSoap">
+      <soap:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientServerSoap12" binding="tns:ClientServerSoap12">
+      <soap12:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientServerHttpGet" binding="tns:ClientServerHttpGet">
+      <http:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientServerHttpPost" binding="tns:ClientServerHttpPost">
+      <http:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

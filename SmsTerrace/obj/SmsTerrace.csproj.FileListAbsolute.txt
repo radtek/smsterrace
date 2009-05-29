@@ -1,0 +1,49 @@
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Form1.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Properties.Resources.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.MainForm.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.SendSmsFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.SmsFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.exe.config
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.exe
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.pdb
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\bin\Debug\DevComponents.DotNetBar2.dll
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.exe
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.pdb
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Resource1.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.OperFilePanel.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserLogin.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.ProgressPanel.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.LoginFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\bin\Debug\DevComponents.DotNetBar2.xml
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserControl1.resources
+D:\My Documents\Visual Studio 2005\Projects\SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserControl2.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.exe.config
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.exe
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.pdb
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.exe
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.pdb
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\DevComponents.DotNetBar2.dll
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\DevComponents.DotNetBar2.xml
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\ResolveAssemblyReference.cache
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Form1.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Properties.Resources.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.Resource1.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.LoginFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.MainForm.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.SendSmsFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.SmsFrm.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.OperFilePanel.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.ProgressPanel.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserControl1.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserControl2.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.UserLogin.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\BgProcess.exe
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\log4net.dll
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\BgProcess.pdb
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\HzTerrace.UI.FrameShow.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\HzTerrace.UI.MmsCreate.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.DeriveFrm.resources

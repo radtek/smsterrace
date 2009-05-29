@@ -1,0 +1,161 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CBD55126-E556-43C6-B48F-DE7F38AE2121}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hz.Processor</RootNamespace>
+    <AssemblyName>BgProcess</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.7.0.4, Culture=neutral, PublicKeyToken=5fd520d36328f741" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.81.0.1407, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\WebSites\WebSite0316\Bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="vjslib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BaseSmsManage.cs" />
+    <Compile Include="BLL\IExRequest.cs" />
+    <Compile Include="BLL\ISmsSendSession.cs" />
+    <Compile Include="BLL\MainManage.cs" />
+    <Compile Include="BLL\Query.cs" />
+    <Compile Include="BLL\SendSms.cs" />
+    <Compile Include="BLL\SmsSendSession.cs" />
+    <Compile Include="BLL\UserManage.cs" />
+    <Compile Include="Comm\FileManage.cs" />
+    <Compile Include="Comm\InitInfo.cs" />
+    <Compile Include="Comm\Log.cs" />
+    <Compile Include="Comm\ObjManage.cs" />
+    <Compile Include="Comm\ProgramSupervise.cs" />
+    <Compile Include="Comm\QueueManage.cs" />
+    <Compile Include="Comm\TimeInfo.cs" />
+    <Compile Include="Comm\WinAPI.cs" />
+    <Compile Include="Comm\ZipFile.cs" />
+    <Compile Include="Comm\ZipUtile.cs" />
+    <Compile Include="DAL\BaseService.cs" />
+    <Compile Include="DAL\MoPendingDealService.cs" />
+    <Compile Include="DAL\QueryInfoService.cs" />
+    <Compile Include="DAL\ReportSubmitServeic.cs" />
+    <Compile Include="DAL\SmsUserService.cs" />
+    <Compile Include="DAL\SubmitMsgService.cs" />
+    <Compile Include="DBUtility\CommandInfo.cs" />
+    <Compile Include="DBUtility\DbHelperOleDb.cs" />
+    <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\IDataAccess.cs" />
+    <Compile Include="DBUtility\PubConstant.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrameShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FrameShow.Designer.cs">
+      <DependentUpon>FrameShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MmsCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MmsCreate.Designer.cs">
+      <DependentUpon>MmsCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\IQueryInfo.cs" />
+    <Compile Include="Model\IReportSubmit.cs" />
+    <Compile Include="Model\MoPendingDeal.cs" />
+    <Compile Include="Model\QueryInfo.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\ReportSubmit.cs" />
+    <Compile Include="Model\SmsSessionInfo.cs" />
+    <Compile Include="Model\SmsUser.cs" />
+    <Compile Include="Model\SubmitMsg.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameShow.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrameShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MmsCreate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MmsCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

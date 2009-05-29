@@ -1,0 +1,371 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD78865E-0AAE-49CE-B252-E1D4B901CAC2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmsTerrace</RootNamespace>
+    <AssemblyName>SmsTerrace</AssemblyName>
+    <ApplicationIcon>6_1237624969.ico</ApplicationIcon>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.7.0.4, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>H:\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comm\ConfigHelper.cs" />
+    <Compile Include="Comm\DataCache.cs" />
+    <Compile Include="BLL\SmsOperate.cs" />
+    <Compile Include="BLL\SmsWebServiceMirror.cs" />
+    <Compile Include="BLL\接收记录Manage.cs" />
+    <Compile Include="BLL\短信记录Manage.cs" />
+    <Compile Include="Comm\InitInfo.cs" />
+    <Compile Include="Comm\Log.cs" />
+    <Compile Include="Comm\ProgramSupervise.cs" />
+    <Compile Include="Comm\QueueManage.cs" />
+    <Compile Include="Comm\TimeInfo.cs" />
+    <Compile Include="Comm\WinAPI.cs" />
+    <Compile Include="DAL\ExcelOperate.cs" />
+    <Compile Include="DAL\SmsRecord.cs" />
+    <Compile Include="DAL\接收记录Service.cs" />
+    <Compile Include="DAL\短信记录Service.cs" />
+    <Compile Include="DBUtility\DataBase.cs" />
+    <Compile Include="DBUtility\DbHelperOleDb.cs" />
+    <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\NewDbHelperOleDb.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IBLL\IConvertToNorm.cs" />
+    <Compile Include="IBLL\ISmsWebServiceMirror.cs" />
+    <Compile Include="Resources\Model\MoPendingDeal.cs" />
+    <Compile Include="Resources\Model\QueryInfo.cs" />
+    <Compile Include="Resources\Model\ReportSubmit.cs" />
+    <Compile Include="Resources\Model\SubmitMsg.cs" />
+    <Compile Include="Resources\Model\transport\oldHzSmsWebSer\UpSms.cs" />
+    <Compile Include="Resources\Model\接收记录.cs" />
+    <Compile Include="Resources\Model\短信记录.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DeriveFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DeriveFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrameShow.resx">
+      <DependentUpon>FrameShow.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\LoginFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MmsCreate.resx">
+      <DependentUpon>MmsCreate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SendSmsFrm.resx">
+      <DependentUpon>SendSmsFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SmsFrm.resx">
+      <DependentUpon>SmsFrm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\OperFilePanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OperFilePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\ProgressPanel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\UserControl1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\UserControl2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\UserLogin.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="UI\DeriveFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DeriveFrm.Designer.cs">
+      <DependentUpon>DeriveFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrameShow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\FrameShow.Designer.cs">
+      <DependentUpon>FrameShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MmsCreate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MmsCreate.Designer.cs">
+      <DependentUpon>MmsCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SendSmsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SendSmsFrm.Designer.cs">
+      <DependentUpon>SendSmsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SmsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SmsFrm.Designer.cs">
+      <DependentUpon>SmsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\HzScrollBar.cs">
+    </Compile>
+    <Compile Include="UI\UseCtrl\OperFilePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\OperFilePanel.Designer.cs">
+      <DependentUpon>OperFilePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\ProgressPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\ProgressPanel.Designer.cs">
+      <DependentUpon>ProgressPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UsePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserControl1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\UserLogin.Designer.cs">
+      <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\ClientWebServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\SmsWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:6239/WebSite/ClientServer.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ClientWebServer\</RelPath>
+      <UpdateFromURL>http://localhost:6239/WebSite/ClientServer.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SmsTerrace_ClientWebServer_ClientServer</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:6239/WebSite/Service2.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SmsWebService\</RelPath>
+      <UpdateFromURL>http://localhost:6239/WebSite/Service2.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>SmsTerrace_SmsWebService_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Web References\SmsWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_153351.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_152247.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_153010.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_153059.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_153143.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2009-01-19_1522471.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0504314.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0504316.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05043110.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\05043130.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="6_1237624969.ico" />
+    <Content Include="ico 01.ico" />
+    <None Include="Web References\SmsWebService\GetBalanceResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SmsWebService\GetSmsResultResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SmsWebService\GetSmsStateResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SmsWebService\GetUpSmsResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SmsWebService\SendResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\SmsWebService\Service2.disco" />
+    <None Include="Web References\ClientWebServer\ClientServer.disco" />
+    <None Include="Web References\ClientWebServer\ClientServer.wsdl" />
+    <None Include="Web References\ClientWebServer\OpRespOfSendResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\ClientWebServer\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SmsWebService\Service2.wsdl" />
+    <None Include="Web References\SmsWebService\SetPasswordResp.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BgProcess\BgProcess.csproj">
+      <Project>{CBD55126-E556-43C6-B48F-DE7F38AE2121}</Project>
+      <Name>BgProcess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
