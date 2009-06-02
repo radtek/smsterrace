@@ -5,7 +5,7 @@
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CD78865E-0AAE-49CE-B252-E1D4B901CAC2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SmsTerrace</RootNamespace>
     <AssemblyName>SmsTerrace</AssemblyName>
@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\LogInfoManage.cs" />
+    <Compile Include="BLL\MmsManage.cs" />
     <Compile Include="Comm\ConfigHelper.cs" />
     <Compile Include="Comm\DataCache.cs" />
     <Compile Include="BLL\SmsOperate.cs" />
@@ -58,11 +60,14 @@
     <Compile Include="BLL\短信记录Manage.cs" />
     <Compile Include="Comm\InitInfo.cs" />
     <Compile Include="Comm\Log.cs" />
+    <Compile Include="Comm\NetLink.cs" />
     <Compile Include="Comm\ProgramSupervise.cs" />
     <Compile Include="Comm\QueueManage.cs" />
     <Compile Include="Comm\TimeInfo.cs" />
     <Compile Include="Comm\WinAPI.cs" />
+    <Compile Include="Comm\XorCoding.cs" />
     <Compile Include="DAL\ExcelOperate.cs" />
+    <Compile Include="DAL\LogInfo.cs" />
     <Compile Include="DAL\SmsRecord.cs" />
     <Compile Include="DAL\接收记录Service.cs" />
     <Compile Include="DAL\短信记录Service.cs" />
@@ -78,13 +83,14 @@
     </Compile>
     <Compile Include="IBLL\IConvertToNorm.cs" />
     <Compile Include="IBLL\ISmsWebServiceMirror.cs" />
-    <Compile Include="Resources\Model\MoPendingDeal.cs" />
-    <Compile Include="Resources\Model\QueryInfo.cs" />
-    <Compile Include="Resources\Model\ReportSubmit.cs" />
-    <Compile Include="Resources\Model\SubmitMsg.cs" />
-    <Compile Include="Resources\Model\transport\oldHzSmsWebSer\UpSms.cs" />
-    <Compile Include="Resources\Model\接收记录.cs" />
-    <Compile Include="Resources\Model\短信记录.cs" />
+    <Compile Include="Model\LogInfo.cs" />
+    <Compile Include="Model\MoPendingDeal.cs" />
+    <Compile Include="Model\QueryInfo.cs" />
+    <Compile Include="Model\ReportSubmit.cs" />
+    <Compile Include="Model\SubmitMsg.cs" />
+    <Compile Include="Model\transport\oldHzSmsWebSer\UpSms.cs" />
+    <Compile Include="Model\接收记录.cs" />
+    <Compile Include="Model\短信记录.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

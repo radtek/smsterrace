@@ -19,7 +19,7 @@ namespace SmsTerrace.BLL
             : base()
         {
             this.Timeout = 2000;
-            this.Url = "http://218.241.155.67:8011/Service.asmx";
+           // this.Url = "http://218.241.155.67:8011/Service.asmx";
         }
         public SmsWebServiceMirror(string serviceUrl)
             : base()
