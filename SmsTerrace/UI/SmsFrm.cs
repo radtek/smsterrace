@@ -19,6 +19,7 @@ namespace SmsTerrace.UI
 {
     public partial class SmsFrm : Office2007RibbonForm
     {
+
         private UserLogin ul;
         public static string userName;
 
@@ -55,15 +56,19 @@ namespace SmsTerrace.UI
         }
         SmsWebServiceMirror SmsWebSer = new SmsWebServiceMirror();
         private SmsOperate smsOperate = new SmsOperate();
-       
+
         public SmsFrm()
-        {         
+        {
             InitializeComponent();
             panelEx4.Controls.Add(new UserControl2());
             HzTerrace.UI.MmsCreate mc = new HzTerrace.UI.MmsCreate();
             ribbonPanel6.Controls.Add(mc);
             ribbonPanel6.EnabledChanged += new EventHandler(ribbonPanel1_EnabledChanged);
             InitFrm();
+            if (!SmsTerrace.Comm.NetLink.IsConnected())
+            {
+                this.Text = "未能连接网络";
+            }
 
         }
 

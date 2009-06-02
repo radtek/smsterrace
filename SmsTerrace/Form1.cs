@@ -25,7 +25,16 @@ namespace SmsTerrace
 
         private void bar1_ItemClick(object sender, EventArgs e)
         {
-            (new SmsFrm()).Show();
+
+
+            Console.WriteLine(SmsTerrace.Comm.XorCoding.Decrypt(SmsTerrace.Comm.XorCoding.Encrypt("0")));
+            byte[] bb = new byte[] { 1, 0, 0, 1 }; 
+           
+           byte[] bta=  SmsTerrace.Comm.XorCoding.XorByte(bb);
+          Console.WriteLine(Convert.ToBase64String(bb));
+           Console.WriteLine( Convert.ToBase64String(bta));
+           Console.WriteLine(Convert.ToBase64String(SmsTerrace.Comm.XorCoding.XorByte(bta)));
+            //(new SmsFrm()).Show();
         }
 
         private void buttonX2_Click(object sender, EventArgs e)

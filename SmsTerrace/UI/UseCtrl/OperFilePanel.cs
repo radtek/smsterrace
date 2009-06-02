@@ -88,7 +88,7 @@ namespace SmsTerrace.UI.UseCtrl
             }
         }
 
-        private int selectColumn = -1;
+        private int selectColumn = 1;
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewX1.SelectedColumns.Count<1)
@@ -97,12 +97,14 @@ namespace SmsTerrace.UI.UseCtrl
             }
             labelX1.Text = "号码列：" + dataGridViewX1.SelectedColumns[0].Name;
            selectColumn= dataGridViewX1.SelectedColumns[0].Index;
+          
         }
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(selectColumn);
           DataView dv=  dataGridViewX1.DataSource as DataView;
-          if (selectColumn<0)
+          if ((selectColumn + 1) > dataGridViewX1.Columns.Count || selectColumn<0)
             {
                 return;
             }
@@ -117,8 +119,7 @@ namespace SmsTerrace.UI.UseCtrl
             if (SelectedTable!=null)
             {
                 SelectedTable(dt);
-            }
-            
+            } 
         }
 
         public delegate void SelectCol(DataTable dt);

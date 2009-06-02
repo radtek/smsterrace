@@ -8,7 +8,22 @@ namespace SmsTerrace
 {
     static class Program
     {
-        public static string[] paramList ;
+        internal static string[] paramList ;
+        static int RunLevel
+        {
+            get
+            {
+                foreach (string item in paramList)
+                {
+                    if ("/debug".Equals(item))
+                    {
+                        return 1;
+                    }
+                }
+                return 0;
+            }
+        }
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -17,6 +32,7 @@ namespace SmsTerrace
         {
 
             Program.paramList = paramList;
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new SmsFrm());

@@ -48,6 +48,8 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.button7 = new System.Windows.Forms.Button();
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             this.SuspendLayout();
@@ -147,9 +149,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(183, 40);
+            this.groupBox1.Location = new System.Drawing.Point(256, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(597, 94);
+            this.groupBox1.Size = new System.Drawing.Size(524, 94);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "帧信息";
@@ -163,7 +165,7 @@
             this.listBox1.ItemHeight = 12;
             this.listBox1.Location = new System.Drawing.Point(3, 17);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(591, 72);
+            this.listBox1.Size = new System.Drawing.Size(518, 72);
             this.listBox1.TabIndex = 1;
             // 
             // backgroundWorker1
@@ -252,14 +254,35 @@
             this.textBoxX3.Size = new System.Drawing.Size(98, 21);
             this.textBoxX3.TabIndex = 16;
             // 
+            // textBoxX4
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX4.Border.Class = "TextBoxBorder";
+            this.textBoxX4.Location = new System.Drawing.Point(108, 86);
+            this.textBoxX4.Name = "textBoxX4";
+            this.textBoxX4.Size = new System.Drawing.Size(142, 21);
+            this.textBoxX4.TabIndex = 16;
+            // 
+            // labelX4
+            // 
+            this.labelX4.Location = new System.Drawing.Point(108, 57);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(142, 23);
+            this.labelX4.TabIndex = 15;
+            this.labelX4.Text = "MMS标题：";
+            // 
             // MmsCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.textBoxX4);
             this.Controls.Add(this.textBoxX3);
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
+            this.Controls.Add(this.labelX4);
             this.Controls.Add(this.labelX1);
             this.Controls.Add(this.textBoxX2);
             this.Controls.Add(this.textBoxX1);
@@ -304,5 +327,7 @@
         private DevComponents.DotNetBar.LabelX labelX3;
         public System.Windows.Forms.Button button7;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
+        private DevComponents.DotNetBar.LabelX labelX4;
     }
 }
