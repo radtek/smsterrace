@@ -211,6 +211,9 @@ namespace SmsTerrace.ClientWebServer {
         PRO,
         
         /// <remarks/>
+        PREFER,
+        
+        /// <remarks/>
         OK,
         
         /// <remarks/>
