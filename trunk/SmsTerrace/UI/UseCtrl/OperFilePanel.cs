@@ -29,7 +29,7 @@ namespace SmsTerrace.UI.UseCtrl
           
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {   
-                selectColumn = -1;
+                //selectColumn = -1;
                 labelX1.Text = "号码列：";
                 string fName = openFileDialog1.FileName;
                 string suffixName =fName.Substring(fName.LastIndexOf('.')).Trim().TrimStart('.').ToLower();
@@ -88,7 +88,7 @@ namespace SmsTerrace.UI.UseCtrl
             }
         }
 
-        private int selectColumn = 1;
+        private int selectColumn = 0;
         private void dataGridViewX1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridViewX1.SelectedColumns.Count<1)

@@ -11,25 +11,27 @@ using hz.sms.Comm;
 using SmsTerrace.UI;
 using SmsTerrace.BLL;
 using hz.BLL.mms;
+using System.Text.RegularExpressions;
 namespace HzTerrace.UI
 {
-    public partial class MmsCreate :UserControl
+    public partial class MmsCreate : UserControl
     {
         public MmsCreate()
         {
             InitializeComponent();
-            
+
+
         }
 
         List<FrameShow> mmsfArray = new List<FrameShow>();
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tableLayoutPanel1.Controls.Count>=10)
+            if (tableLayoutPanel1.Controls.Count >= 5)
             {
-                MessageBox.Show("最大帧数为10");
+                MessageBox.Show("最大帧数为5");
                 return;
             }
-            
+
             if (DialogResult.OK != openFileDialog1.ShowDialog())
             {
                 return;
@@ -52,7 +54,7 @@ namespace HzTerrace.UI
 
         void fs_ControlRemoved(object sender, ControlEventArgs e)
         {
-            fs_ControlAdded(null,null);
+            fs_ControlAdded(null, null);
         }
 
         void fs_ControlAdded(object sender, ControlEventArgs e)
@@ -61,7 +63,7 @@ namespace HzTerrace.UI
             listBox1.Items.Clear();
             for (int i = 0; i < pathList.Length; i++)
             {
-                listBox1.Items.Add((i+1)+" -  "+pathList[i]);
+                listBox1.Items.Add((i + 1) + " -  " + pathList[i]);
             }
         }
         FrameShow nowFs;
@@ -77,8 +79,8 @@ namespace HzTerrace.UI
                 nowFs.BorderStyle = BorderStyle.None;
             }
             nowFs = nowFsTemp;
-           
-            fs_ControlAdded(null,null);
+
+            fs_ControlAdded(null, null);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -92,12 +94,12 @@ namespace HzTerrace.UI
 
                 string str = openFileDialog1.FileName;
                 FrameShow fs = nowFs;
-            
+
                 if (fs.add(str))
                 {
-                   // fs.Controls.Add(fs);
+                    // fs.Controls.Add(fs);
                 }
-                
+
             }
             else
             {
@@ -115,18 +117,18 @@ namespace HzTerrace.UI
                 {
                     string p = mmsfArray[i].readPathArray()[j];
                     string ext = i + "_" + j + "_" + System.IO.Path.GetExtension(p);
-                    byte[] fileByte=File.ReadAllBytes(p);
+                    byte[] fileByte = File.ReadAllBytes(p);
                     totalSize += fileByte.Length;
                     dic.Add(ext, fileByte);
                 }
             }
             if (totalSize > InitInfo.MMS_MAX_SIZE)
             {
-                MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (InitInfo.MMS_MAX_SIZE/1024)+"KB");
+                MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (InitInfo.MMS_MAX_SIZE / 1024) + "KB");
                 return;
             }
 
-            if (textBoxX1.Text.Trim().Length<1||textBoxX2.Text.Trim().Length<1||integerInput1.Value<1)
+            if (textBoxX1.Text.Trim().Length < 1 || textBoxX2.Text.Trim().Length < 1 || integerInput1.Value < 1)
             {
                 MessageBox.Show("发送参数不正确！");
                 return;
@@ -137,13 +139,13 @@ namespace HzTerrace.UI
                 return;
             }
 
-           backgroundWorker1.RunWorkerAsync(dic);
-          this.Parent.Enabled = false;
+            backgroundWorker1.RunWorkerAsync(dic);
+            this.Parent.Enabled = false;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (nowFs !=null)
+            if (nowFs != null)
             {
                 tableLayoutPanel1.Controls.RemoveByKey(nowFs.Name);
                 mmsfArray.Remove(nowFs);
@@ -152,13 +154,15 @@ namespace HzTerrace.UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
+
+
             SmsTerrace.Form1 f = new SmsTerrace.Form1();
-            f.Show();
+           // f.Show();
             for (int ik = 0; ik < tableLayoutPanel1.Controls.Count; ik++)
             {
-               //textBox1.Text+= ((tableLayoutPanel1.Controls[ik])).GetType().ToString();
-           }
+                //textBox1.Text+= ((tableLayoutPanel1.Controls[ik])).GetType().ToString();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -166,22 +170,22 @@ namespace HzTerrace.UI
             if (nowFs != null)
             {
                 nowFs.clear();
-            } 
+            }
             //tableLayoutPanel1.HorizontalScroll.Width = 10;
         }
 
         private void tableLayoutPanel1_ControlAdded(object sender, ControlEventArgs e)
         {
-           FrameShow fs= e.Control as FrameShow;
-           fs.FirstText ="第"+tableLayoutPanel1.Controls.Count+"帧-";
+            FrameShow fs = e.Control as FrameShow;
+            fs.FirstText = "第" + tableLayoutPanel1.Controls.Count + "帧-";
         }
 
         private void tableLayoutPanel1_ControlRemoved(object sender, ControlEventArgs e)
         {
             for (int i = 0; i < tableLayoutPanel1.Controls.Count; i++)
             {
-               FrameShow fs= tableLayoutPanel1.Controls[i] as FrameShow;
-               fs.FirstText = "第" + (i+1) + "帧-";
+                FrameShow fs = tableLayoutPanel1.Controls[i] as FrameShow;
+                fs.FirstText = "第" + (i + 1) + "帧-";
             }
         }
         Random r = new Random(DateTime.Now.Millisecond);
@@ -190,6 +194,11 @@ namespace HzTerrace.UI
 
             try
             {
+                if (dataGridViewX1.Rows.Count < 1)
+                {
+                    MessageBox.Show("请导入号码！");
+                    return;
+                }
                 Dictionary<string, byte[]> dic = e.Argument as Dictionary<string, byte[]>;
                 MmsManage mmsManage = new MmsManage();
                 dic = mmsManage.MmsXmlToDic(textBoxX4.Text, phoneNums, dic);
@@ -199,8 +208,26 @@ namespace HzTerrace.UI
                 string mmsPwd = textBoxX2.Text;
                 int mmsBid = integerInput1.Value;
                 int sr = r.Next(99999);
-               string md5pwd= System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mmsPwd + sr, "MD5").ToLower();
-                string[] sArr = new string[] { mmsUserId, md5pwd, mmsBid.ToString(), phoneNums, Convert.ToBase64String(zipByte), " ", " ", sr.ToString() };
+
+                // phoneNums=dataGridViewX1.Rows
+
+                StringBuilder sbu = new StringBuilder();
+                foreach (DataGridViewRow item in dataGridViewX1.Rows)
+                {
+                    if (item.Cells.Count < 1 || item.Cells[0].Value == null)
+                        continue;
+                    if (PhoneNumValidate(item.Cells[0].Value.ToString().Trim()) < 0)
+                    {
+                        item.Cells[0].Style.BackColor = Color.Red;
+                        continue;
+                    }
+                    sbu.Append(item.Cells[0].Value as string);
+                    sbu.Append(",");
+                }
+
+                string ph = sbu.ToString().TrimEnd(',');
+                string md5pwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mmsPwd + sr, "MD5").ToLower();
+                string[] sArr = new string[] { mmsUserId, md5pwd, mmsBid.ToString(), ph, Convert.ToBase64String(zipByte), " ", " ", sr.ToString() };
                 SmsTerrace.ClientWebServer.OpRespOfSendResp opR = fk.MmsToService(sArr);
                 e.Result = opR;
             }
@@ -241,31 +268,114 @@ namespace HzTerrace.UI
             //SmsTerrace.UI.UseCtrl.OperFilePanel f = new SmsTerrace.UI.UseCtrl.OperFilePanel();
             //fo.Controls.Add(f);
             //fo.Show();
+
             SmsTerrace.UI.DeriveFrm deriveFrm = new SmsTerrace.UI.DeriveFrm();
             deriveFrm.Show();
             deriveFrm.DataSelectEnd += new DoWorkEventHandler(deriveFrm_SelectEnd);
-           
+
         }
         string phoneNums = "";
         void deriveFrm_SelectEnd(object sender, DoWorkEventArgs e)
         {
-           
+
             DeriveFrm df = sender as DeriveFrm;
-            DataTable dt=e.Argument as DataTable;
+            DataTable dt = e.Argument as DataTable;
             df.Close();
             phoneNums = "";
-            int i=0;
+            int i = 0;
             foreach (DataRow row in dt.Rows)
             {
                 i++;
-               phoneNums+= (row[0].ToString()+",");
+                phoneNums += (row[0].ToString() + ",");
+              int newRow=  dataGridViewX1.Rows.Add(row.ItemArray[0]);
+              if (PhoneNumValidate(row.ItemArray[0] as string) < 1)
+                  dataGridViewX1[0, newRow].Style.BackColor = Color.LightCoral;
             }
+
             phoneNums = phoneNums.TrimEnd(',');
             textBoxX3.Text = "导入号码" + i;
             MessageBox.Show("已导入号码：" + i);
-
         }
 
-       
+
+        public int PhoneNumValidate(string phoneNum)
+        {
+            if (Regex.IsMatch(phoneNum, @"^(0\d{9,11})|(1\d{10})$"))
+            {
+                return 1;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        private void 删除选中行ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in dataGridViewX1.SelectedRows)
+            {
+                if (!item.IsNewRow)
+                    dataGridViewX1.Rows.Remove(item);
+            }
+        }
+
+        private void 全选ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridViewX1.SelectAll();
+        }
+
+        private void 验证号码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in dataGridViewX1.Rows)
+            {
+                if (item.Cells.Count < 1 || item.Cells[0].Value == null)
+                    continue;
+                if (PhoneNumValidate(item.Cells[0].Value.ToString().Trim()) < 0)
+                {
+                    item.Cells[0].Style.BackColor = Color.MediumVioletRed;
+                    continue;
+                }
+            }
+        }
+        
+        private void 删除错误号码ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> list = new List<DataGridViewRow>();
+            foreach (DataGridViewRow item in dataGridViewX1.Rows)
+            {
+                if (item.IsNewRow)
+                    continue;
+                bool bo = item.Cells.Count < 1 || item.Cells[0].Value == null;
+                if (bo||PhoneNumValidate(item.Cells[0].Value.ToString().Trim()) < 0)
+                {
+                   // dataGridViewX1.Rows.Remove(item);
+                    list.Add(item);
+                }
+            }
+            foreach (DataGridViewRow item in list)
+            {
+                dataGridViewX1.Rows.Remove(item);
+            }
+        }
+
+        private void dataGridViewX1_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell dgvc = dataGridViewX1[e.ColumnIndex, e.RowIndex];
+            if (dgvc.OwningRow.IsNewRow)
+            {
+                return;
+            }
+            string phn = dgvc.Value as string;
+
+            if (phn == null || PhoneNumValidate(phn.Trim()) < 0)
+            {
+                dataGridViewX1.CurrentCell.Style.BackColor = Color.LightCoral;
+            }
+            else
+            {
+                dataGridViewX1.CurrentCell.Style.BackColor = System.Drawing.SystemColors.Window ;
+            }
+        }
+
     }
 }
