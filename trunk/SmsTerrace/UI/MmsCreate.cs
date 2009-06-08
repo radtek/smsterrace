@@ -133,11 +133,11 @@ namespace HzTerrace.UI
                 MessageBox.Show("发送参数不正确！");
                 return;
             }
-            if (phoneNums.Trim().TrimEnd(',').Length < 1)
-            {
-                MessageBox.Show("没有可发送号码，请确认号码导入正确");
-                return;
-            }
+            //if (phoneNums.Trim().TrimEnd(',').Length < 1)
+            //{
+            //    MessageBox.Show("没有可发送号码，请确认号码导入正确");
+            //    return;
+            //}
 
             backgroundWorker1.RunWorkerAsync(dic);
             this.Parent.Enabled = false;
@@ -201,13 +201,6 @@ namespace HzTerrace.UI
                 }
                 Dictionary<string, byte[]> dic = e.Argument as Dictionary<string, byte[]>;
                 MmsManage mmsManage = new MmsManage();
-                dic = mmsManage.MmsXmlToDic(textBoxX4.Text, phoneNums, dic);
-                byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
-                SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
-                string mmsUserId = textBoxX1.Text;
-                string mmsPwd = textBoxX2.Text;
-                int mmsBid = integerInput1.Value;
-                int sr = r.Next(99999);
 
                 // phoneNums=dataGridViewX1.Rows
 
@@ -226,6 +219,16 @@ namespace HzTerrace.UI
                 }
 
                 string ph = sbu.ToString().TrimEnd(',');
+                phoneNums = ph;
+                dic = mmsManage.MmsXmlToDic(textBoxX4.Text, ph, dic);
+                byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
+                SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
+                string mmsUserId = textBoxX1.Text;
+                string mmsPwd = textBoxX2.Text;
+                int mmsBid = integerInput1.Value;
+                int sr = r.Next(99999);
+
+               
                 string md5pwd = System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(mmsPwd + sr, "MD5").ToLower();
                 string[] sArr = new string[] { mmsUserId, md5pwd, mmsBid.ToString(), ph, Convert.ToBase64String(zipByte), " ", " ", sr.ToString() };
                 SmsTerrace.ClientWebServer.OpRespOfSendResp opR = fk.MmsToService(sArr);
@@ -254,7 +257,7 @@ namespace HzTerrace.UI
             SmsTerrace.BLL.短信记录Manage jl = new SmsTerrace.BLL.短信记录Manage();
             SmsTerrace.Model.短信记录 jlModel = new SmsTerrace.Model.短信记录();
             jlModel.号码 = phoneNums;
-            jlModel.内容 = "彩信";
+            jlModel.内容 = "彩信:"+opR.ReturnResult.SubmitID;
             jlModel.时间 = DateTime.Now.ToString();
             jlModel.状态 = opR.State.Result + "";
             jlModel.备注 = opR.State.Resp + opR.State.RespDesc;

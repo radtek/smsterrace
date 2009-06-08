@@ -38,6 +38,7 @@
         <s:restriction base="s:string">
           <s:enumeration value="OTHER" />
           <s:enumeration value="PRO" />
+          <s:enumeration value="PREFER" />
           <s:enumeration value="OK" />
           <s:enumeration value="UNKNOWN" />
           <s:enumeration value="ERROR_PARAM" />
