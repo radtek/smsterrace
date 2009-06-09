@@ -141,6 +141,10 @@
       <DependentUpon>SmsFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\AddressBook.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddressBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UseCtrl\OperFilePanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>OperFilePanel.cs</DependentUpon>
@@ -222,6 +226,12 @@
     </Compile>
     <Compile Include="UI\SmsFrm.Designer.cs">
       <DependentUpon>SmsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\AddressBook.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\AddressBook.Designer.cs">
+      <DependentUpon>AddressBook.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UseCtrl\HzScrollBar.cs">
     </Compile>
@@ -336,6 +346,7 @@
   <ItemGroup>
     <Content Include="6_1237624969.ico" />
     <Content Include="ico 01.ico" />
+    <None Include="Properties\DataSources\HzTerrace.BLL.relation.datasource" />
     <None Include="Web References\SmsWebService\GetBalanceResp.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

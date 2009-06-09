@@ -38,7 +38,7 @@ namespace HzTerrace.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into relation(");
-			strSql.Append("pertainUser,name,sex,phone1,phone2,birthday,company,email,address,group,status,remark)");
+			strSql.Append("pertainUser,[name],sex,phone1,phone2,[birthday],[company],[email],[address],[group],[status],[remark])");
 			strSql.Append(" values (");
 			strSql.Append("@pertainUser,@name,@sex,@phone1,@phone2,@birthday,@company,@email,@address,@group,@status,@remark)");
 			OleDbParameter[] parameters = {
@@ -163,7 +163,7 @@ namespace HzTerrace.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select id,pertainUser,name,sex,phone1,phone2,birthday,company,email,address,group,status,remark from relation ");
+			strSql.Append("select [id],pertainUser,[name],sex,phone1,phone2,birthday,company,email,address,group,status,remark from relation ");
 			strSql.Append(" where id=@id ");
 			OleDbParameter[] parameters = {
 					new OleDbParameter("@id", OleDbType.Integer,4)};
@@ -225,7 +225,7 @@ namespace HzTerrace.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select id,pertainUser,name,sex,phone1,phone2,birthday,company,email,address,group,status,remark ");
+			strSql.Append("select [id],pertainUser,[name],sex,phone1,phone2,birthday,company,email,address,group,status,remark ");
 			strSql.Append(" FROM relation ");
 			if(strWhere.Trim()!="")
 			{
@@ -245,7 +245,7 @@ namespace HzTerrace.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" id,pertainUser,name,sex,phone1,phone2,birthday,company,email,address,group,status,remark ");
+			strSql.Append(" [id],pertainUser,[name],sex,phone1,phone2,birthday,company,email,address,group,status,remark ");
 			strSql.Append(" FROM relation ");
 			if(strWhere.Trim()!="")
 			{
