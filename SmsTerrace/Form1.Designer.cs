@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -37,13 +36,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
-            this.navigationPane1 = new DevComponents.DotNetBar.NavigationPane();
-            this.navigationPanePanel1 = new DevComponents.DotNetBar.NavigationPanePanel();
-            this.buttonItem6 = new DevComponents.DotNetBar.ButtonItem();
-            this.navigationPanePanel2 = new DevComponents.DotNetBar.NavigationPanePanel();
-            this.buttonItem7 = new DevComponents.DotNetBar.ButtonItem();
-            this.navigationPanePanel3 = new DevComponents.DotNetBar.NavigationPanePanel();
-            this.buttonItem8 = new DevComponents.DotNetBar.ButtonItem();
             this.dotNetBarManager1 = new DevComponents.DotNetBar.DotNetBarManager(this.components);
             this.dockSite4 = new DevComponents.DotNetBar.DockSite();
             this.dockSite1 = new DevComponents.DotNetBar.DockSite();
@@ -59,24 +51,26 @@
             this.ribbonBar1 = new DevComponents.DotNetBar.RibbonBar();
             this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
-            this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
-            this.ribbonClientPanel1 = new DevComponents.DotNetBar.Ribbon.RibbonClientPanel();
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.sliderItem1 = new DevComponents.DotNetBar.SliderItem();
+            this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
+            this.ribbonClientPanel1 = new DevComponents.DotNetBar.Ribbon.RibbonClientPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.navigationPane1.SuspendLayout();
             this.dockSite2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.bar1.SuspendLayout();
             this.panelDockContainer1.SuspendLayout();
             this.ribbonClientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonX1
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(12, 12);
+            this.buttonX1.Location = new System.Drawing.Point(359, 36);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(75, 23);
             this.buttonX1.TabIndex = 0;
@@ -136,125 +130,6 @@
             this.hScrollBar1.TabIndex = 5;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
-            // navigationPane1
-            // 
-            this.navigationPane1.Controls.Add(this.navigationPanePanel1);
-            this.navigationPane1.Controls.Add(this.navigationPanePanel2);
-            this.navigationPane1.Controls.Add(this.navigationPanePanel3);
-            this.navigationPane1.ItemPaddingBottom = 2;
-            this.navigationPane1.ItemPaddingTop = 2;
-            this.navigationPane1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem6,
-            this.buttonItem7,
-            this.buttonItem8});
-            this.navigationPane1.Location = new System.Drawing.Point(13, 37);
-            this.navigationPane1.Name = "navigationPane1";
-            this.navigationPane1.Padding = new System.Windows.Forms.Padding(1);
-            this.navigationPane1.Size = new System.Drawing.Size(150, 294);
-            this.navigationPane1.TabIndex = 8;
-            // 
-            // 
-            // 
-            this.navigationPane1.TitlePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.navigationPane1.TitlePanel.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.navigationPane1.TitlePanel.Location = new System.Drawing.Point(1, 1);
-            this.navigationPane1.TitlePanel.Name = "panelTitle";
-            this.navigationPane1.TitlePanel.Size = new System.Drawing.Size(148, 24);
-            this.navigationPane1.TitlePanel.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.navigationPane1.TitlePanel.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.navigationPane1.TitlePanel.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.navigationPane1.TitlePanel.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.navigationPane1.TitlePanel.Style.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
-            this.navigationPane1.TitlePanel.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.navigationPane1.TitlePanel.Style.GradientAngle = 90;
-            this.navigationPane1.TitlePanel.Style.MarginLeft = 4;
-            this.navigationPane1.TitlePanel.TabIndex = 0;
-            this.navigationPane1.TitlePanel.Text = "buttonItem6";
-            // 
-            // navigationPanePanel1
-            // 
-            this.navigationPanePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPanePanel1.Location = new System.Drawing.Point(1, 25);
-            this.navigationPanePanel1.Name = "navigationPanePanel1";
-            this.navigationPanePanel1.ParentItem = this.buttonItem6;
-            this.navigationPanePanel1.Size = new System.Drawing.Size(148, 236);
-            this.navigationPanePanel1.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.navigationPanePanel1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.navigationPanePanel1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.navigationPanePanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.navigationPanePanel1.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.navigationPanePanel1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.navigationPanePanel1.Style.GradientAngle = 90;
-            this.navigationPanePanel1.StyleMouseDown.Alignment = System.Drawing.StringAlignment.Center;
-            this.navigationPanePanel1.StyleMouseDown.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground;
-            this.navigationPanePanel1.StyleMouseDown.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBackground2;
-            this.navigationPanePanel1.StyleMouseDown.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedBorder;
-            this.navigationPanePanel1.StyleMouseDown.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemPressedText;
-            this.navigationPanePanel1.StyleMouseOver.Alignment = System.Drawing.StringAlignment.Center;
-            this.navigationPanePanel1.StyleMouseOver.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground;
-            this.navigationPanePanel1.StyleMouseOver.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBackground2;
-            this.navigationPanePanel1.StyleMouseOver.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotBorder;
-            this.navigationPanePanel1.StyleMouseOver.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemHotText;
-            this.navigationPanePanel1.TabIndex = 2;
-            // 
-            // buttonItem6
-            // 
-            this.buttonItem6.Checked = true;
-            this.buttonItem6.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem6.Image")));
-            this.buttonItem6.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonItem6.ImagePaddingHorizontal = 8;
-            this.buttonItem6.Name = "buttonItem6";
-            this.buttonItem6.OptionGroup = "navBar";
-            this.buttonItem6.Text = "buttonItem6";
-            // 
-            // navigationPanePanel2
-            // 
-            this.navigationPanePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPanePanel2.Location = new System.Drawing.Point(1, 1);
-            this.navigationPanePanel2.Name = "navigationPanePanel2";
-            this.navigationPanePanel2.ParentItem = this.buttonItem7;
-            this.navigationPanePanel2.Size = new System.Drawing.Size(148, 260);
-            this.navigationPanePanel2.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.navigationPanePanel2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.navigationPanePanel2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.navigationPanePanel2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.navigationPanePanel2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.navigationPanePanel2.Style.GradientAngle = 90;
-            this.navigationPanePanel2.TabIndex = 3;
-            // 
-            // buttonItem7
-            // 
-            this.buttonItem7.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem7.Image")));
-            this.buttonItem7.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonItem7.ImagePaddingHorizontal = 8;
-            this.buttonItem7.Name = "buttonItem7";
-            this.buttonItem7.OptionGroup = "navBar";
-            this.buttonItem7.Text = "buttonItem7";
-            // 
-            // navigationPanePanel3
-            // 
-            this.navigationPanePanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationPanePanel3.Location = new System.Drawing.Point(1, 1);
-            this.navigationPanePanel3.Name = "navigationPanePanel3";
-            this.navigationPanePanel3.ParentItem = this.buttonItem8;
-            this.navigationPanePanel3.Size = new System.Drawing.Size(148, 260);
-            this.navigationPanePanel3.Style.Alignment = System.Drawing.StringAlignment.Center;
-            this.navigationPanePanel3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.navigationPanePanel3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.navigationPanePanel3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.navigationPanePanel3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
-            this.navigationPanePanel3.Style.GradientAngle = 90;
-            this.navigationPanePanel3.TabIndex = 4;
-            // 
-            // buttonItem8
-            // 
-            this.buttonItem8.Image = ((System.Drawing.Image)(resources.GetObject("buttonItem8.Image")));
-            this.buttonItem8.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonItem8.ImagePaddingHorizontal = 8;
-            this.buttonItem8.Name = "buttonItem8";
-            this.buttonItem8.OptionGroup = "navBar";
-            this.buttonItem8.Text = "buttonItem8";
-            // 
             // dotNetBarManager1
             // 
             this.dotNetBarManager1.AutoDispatchShortcuts.Add(DevComponents.DotNetBar.eShortcut.F1);
@@ -307,10 +182,10 @@
             this.dockSite2.Controls.Add(this.bar1);
             this.dockSite2.Dock = System.Windows.Forms.DockStyle.Right;
             this.dockSite2.DocumentDockContainer = new DevComponents.DotNetBar.DocumentDockContainer(new DevComponents.DotNetBar.DocumentBaseContainer[] {
-            ((DevComponents.DotNetBar.DocumentBaseContainer)(new DevComponents.DotNetBar.DocumentBarContainer(this.bar1, 239, 425)))}, DevComponents.DotNetBar.eOrientation.Horizontal);
-            this.dockSite2.Location = new System.Drawing.Point(546, 0);
+            ((DevComponents.DotNetBar.DocumentBaseContainer)(new DevComponents.DotNetBar.DocumentBarContainer(this.bar1, 321, 425)))}, DevComponents.DotNetBar.eOrientation.Horizontal);
+            this.dockSite2.Location = new System.Drawing.Point(464, 0);
             this.dockSite2.Name = "dockSite2";
-            this.dockSite2.Size = new System.Drawing.Size(242, 425);
+            this.dockSite2.Size = new System.Drawing.Size(324, 425);
             this.dockSite2.TabIndex = 10;
             this.dockSite2.TabStop = false;
             // 
@@ -328,7 +203,7 @@
             this.bar1.LayoutType = DevComponents.DotNetBar.eLayoutType.DockContainer;
             this.bar1.Location = new System.Drawing.Point(3, 0);
             this.bar1.Name = "bar1";
-            this.bar1.Size = new System.Drawing.Size(239, 425);
+            this.bar1.Size = new System.Drawing.Size(321, 425);
             this.bar1.Stretch = true;
             this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
             this.bar1.TabIndex = 0;
@@ -337,10 +212,10 @@
             // 
             // panelDockContainer1
             // 
-            this.panelDockContainer1.Controls.Add(this.navigationPane1);
+            this.panelDockContainer1.Controls.Add(this.dataGridView1);
             this.panelDockContainer1.Location = new System.Drawing.Point(3, 23);
             this.panelDockContainer1.Name = "panelDockContainer1";
-            this.panelDockContainer1.Size = new System.Drawing.Size(233, 399);
+            this.panelDockContainer1.Size = new System.Drawing.Size(315, 399);
             this.panelDockContainer1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDockContainer1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.panelDockContainer1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -436,24 +311,6 @@
             this.textBoxItem1.Name = "textBoxItem1";
             this.textBoxItem1.WatermarkColor = System.Drawing.SystemColors.GrayText;
             // 
-            // itemContainer1
-            // 
-            this.itemContainer1.Name = "itemContainer1";
-            // 
-            // ribbonClientPanel1
-            // 
-            this.ribbonClientPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.ribbonClientPanel1.Controls.Add(this.ribbonBar1);
-            this.ribbonClientPanel1.Location = new System.Drawing.Point(282, 117);
-            this.ribbonClientPanel1.Name = "ribbonClientPanel1";
-            this.ribbonClientPanel1.Size = new System.Drawing.Size(200, 100);
-            // 
-            // 
-            // 
-            this.ribbonClientPanel1.Style.Class = "RibbonClientPanel";
-            this.ribbonClientPanel1.TabIndex = 18;
-            this.ribbonClientPanel1.Text = "ribbonClientPanel1";
-            // 
             // buttonItem2
             // 
             this.buttonItem2.ImagePaddingHorizontal = 8;
@@ -466,11 +323,51 @@
             this.sliderItem1.Text = "sliderItem1";
             this.sliderItem1.Value = 0;
             // 
+            // itemContainer1
+            // 
+            this.itemContainer1.Name = "itemContainer1";
+            // 
+            // ribbonClientPanel1
+            // 
+            this.ribbonClientPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.ribbonClientPanel1.Controls.Add(this.ribbonBar1);
+            this.ribbonClientPanel1.Location = new System.Drawing.Point(93, 8);
+            this.ribbonClientPanel1.Name = "ribbonClientPanel1";
+            this.ribbonClientPanel1.Size = new System.Drawing.Size(200, 100);
+            // 
+            // 
+            // 
+            this.ribbonClientPanel1.Style.Class = "RibbonClientPanel";
+            this.ribbonClientPanel1.TabIndex = 18;
+            this.ribbonClientPanel1.Text = "ribbonClientPanel1";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(315, 399);
+            this.dataGridView1.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(464, 425);
+            this.panel2.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 435);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.ribbonClientPanel1);
             this.Controls.Add(this.dockSite2);
             this.Controls.Add(this.dockSite1);
@@ -487,12 +384,12 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.navigationPane1.ResumeLayout(false);
             this.dockSite2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.bar1.ResumeLayout(false);
             this.panelDockContainer1.ResumeLayout(false);
             this.ribbonClientPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -506,13 +403,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.HScrollBar hScrollBar1;
-        private DevComponents.DotNetBar.NavigationPane navigationPane1;
-        private DevComponents.DotNetBar.NavigationPanePanel navigationPanePanel1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem6;
-        private DevComponents.DotNetBar.NavigationPanePanel navigationPanePanel2;
-        private DevComponents.DotNetBar.ButtonItem buttonItem7;
-        private DevComponents.DotNetBar.NavigationPanePanel navigationPanePanel3;
-        private DevComponents.DotNetBar.ButtonItem buttonItem8;
         private DevComponents.DotNetBar.DotNetBarManager dotNetBarManager1;
         private DevComponents.DotNetBar.DockSite dockSite4;
         private DevComponents.DotNetBar.DockSite dockSite1;
@@ -532,6 +422,8 @@
         private DevComponents.DotNetBar.ItemContainer itemContainer1;
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
         private DevComponents.DotNetBar.SliderItem sliderItem1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel2;
 
     }
 }

@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using SmsTerrace.UI;
 using SmsTerrace.UI.UseCtrl;
 using DevComponents.DotNetBar;
+
 namespace SmsTerrace
 {
     public partial class Form1 : Form
@@ -19,14 +20,27 @@ namespace SmsTerrace
             openFileDialog1.Filter = @"文本文件|*.txt|Excal|*.xls|所有文件|*.*";
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.FilterIndex = 1;
-            
+            panel2.Controls.Add(new AddressBook());
         }
 
 
         private void bar1_ItemClick(object sender, EventArgs e)
         {
-
-
+            panel2.Controls.Add(new Form1());
+            HzTerrace.BLL.relation relBLL = new HzTerrace.BLL.relation();
+            HzTerrace.Model.relation relModel = new HzTerrace.Model.relation();
+            relModel.name = "Test";
+            relModel.sex = true;
+            relModel.phone1 = "";
+            relModel.phone2 = "";
+            relModel.company = "";
+            relModel.email = "";
+            relModel.address = "";
+            relModel.remark = "";
+            relBLL.Add(relModel); //
+            dataGridView1.DataSource = relBLL.GetAllList().Tables[0];
+       
+            /*
             Console.WriteLine(SmsTerrace.Comm.XorCoding.Decrypt(SmsTerrace.Comm.XorCoding.Encrypt("0")));
             byte[] bb = new byte[] { 1, 0, 0, 1 }; 
            
@@ -35,6 +49,7 @@ namespace SmsTerrace
            Console.WriteLine( Convert.ToBase64String(bta));
            Console.WriteLine(Convert.ToBase64String(SmsTerrace.Comm.XorCoding.XorByte(bta)));
             //(new SmsFrm()).Show();
+             */ 
         }
 
         private void buttonX2_Click(object sender, EventArgs e)

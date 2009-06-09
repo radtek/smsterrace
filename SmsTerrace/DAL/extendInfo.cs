@@ -37,7 +37,7 @@ namespace HzTerrace.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into extendInfo(");
-			strSql.Append("relationId,name,value,sign)");
+			strSql.Append("relationId,[name],[value],sign)");
 			strSql.Append(" values (");
 			strSql.Append("@relationId,@name,@value,@sign)");
 			OleDbParameter[] parameters = {
@@ -106,7 +106,7 @@ namespace HzTerrace.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select id,relationId,name,value,sign from extendInfo ");
+			strSql.Append("select [id],relationId,[name],[value],sign from extendInfo ");
 			strSql.Append(" where id=@id ");
 			OleDbParameter[] parameters = {
 					new OleDbParameter("@id", OleDbType.Integer,4)};
@@ -141,7 +141,7 @@ namespace HzTerrace.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select id,relationId,name,value,sign ");
+			strSql.Append("select id,relationId,[name],[value],sign ");
 			strSql.Append(" FROM extendInfo ");
 			if(strWhere.Trim()!="")
 			{
@@ -161,7 +161,7 @@ namespace HzTerrace.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" id,relationId,name,value,sign ");
+			strSql.Append(" [id],relationId,[name],[value],sign ");
 			strSql.Append(" FROM extendInfo ");
 			if(strWhere.Trim()!="")
 			{
