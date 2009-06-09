@@ -50,8 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\extendInfo.cs" />
     <Compile Include="BLL\LogInfoManage.cs" />
     <Compile Include="BLL\MmsManage.cs" />
+    <Compile Include="BLL\relation.cs" />
     <Compile Include="Comm\ConfigHelper.cs" />
     <Compile Include="Comm\DataCache.cs" />
     <Compile Include="BLL\SmsOperate.cs" />
@@ -67,7 +69,9 @@
     <Compile Include="Comm\WinAPI.cs" />
     <Compile Include="Comm\XorCoding.cs" />
     <Compile Include="DAL\ExcelOperate.cs" />
+    <Compile Include="DAL\extendInfo.cs" />
     <Compile Include="DAL\LogInfo.cs" />
+    <Compile Include="DAL\relation.cs" />
     <Compile Include="DAL\SmsRecord.cs" />
     <Compile Include="DAL\接收记录Service.cs" />
     <Compile Include="DAL\短信记录Service.cs" />
@@ -83,9 +87,11 @@
     </Compile>
     <Compile Include="IBLL\IConvertToNorm.cs" />
     <Compile Include="IBLL\ISmsWebServiceMirror.cs" />
+    <Compile Include="Model\extendInfo.cs" />
     <Compile Include="Model\LogInfo.cs" />
     <Compile Include="Model\MoPendingDeal.cs" />
     <Compile Include="Model\QueryInfo.cs" />
+    <Compile Include="Model\relation.cs" />
     <Compile Include="Model\ReportSubmit.cs" />
     <Compile Include="Model\SubmitMsg.cs" />
     <Compile Include="Model\transport\oldHzSmsWebSer\UpSms.cs" />

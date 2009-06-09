@@ -538,5 +538,13 @@ namespace hz.sms.DBUtility
          
         #endregion
 
+
+        internal static bool Exists(string p, OleDbParameter[] parameters)
+        {
+            int i = DbHelperOleDb.ExecuteSql(p, parameters);
+            if (i > 0)
+                return true;
+            return false;
+        }
     }
 }

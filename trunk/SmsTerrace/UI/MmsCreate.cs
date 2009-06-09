@@ -19,8 +19,6 @@ namespace HzTerrace.UI
         public MmsCreate()
         {
             InitializeComponent();
-
-
         }
 
         List<FrameShow> mmsfArray = new List<FrameShow>();
