@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddressBook));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
+            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
+            this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer3 = new DevComponents.DotNetBar.ItemContainer();
@@ -52,29 +55,33 @@
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
-            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
-            this.textBoxItem1 = new DevComponents.DotNetBar.TextBoxItem();
-            this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
-            this.itemContainer5 = new DevComponents.DotNetBar.ItemContainer();
-            this.buttonItem16 = new DevComponents.DotNetBar.ButtonItem();
-            this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
-            this.buttonItem17 = new DevComponents.DotNetBar.ButtonItem();
-            this.itemContainer7 = new DevComponents.DotNetBar.ItemContainer();
-            this.buttonItem18 = new DevComponents.DotNetBar.ButtonItem();
+            this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
+            this.labelItem3 = new DevComponents.DotNetBar.LabelItem();
+            this.labelItem4 = new DevComponents.DotNetBar.LabelItem();
+            this.comboBoxItem1 = new DevComponents.DotNetBar.ComboBoxItem();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.ribbonControl1.SuspendLayout();
+            this.ribbonPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
-            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.ribbonTabItem2,
             this.labelItem1,
-            this.textBoxItem1,
-            this.buttonItem14,
+            this.comboBoxItem1,
             this.buttonItem15});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
@@ -90,6 +97,17 @@
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "ribbonControl1";
             // 
+            // ribbonPanel2
+            // 
+            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel2.Controls.Add(this.dataGridViewX1);
+            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 27);
+            this.ribbonPanel2.Name = "ribbonPanel2";
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.ribbonPanel2.Size = new System.Drawing.Size(800, 571);
+            this.ribbonPanel2.TabIndex = 2;
+            // 
             // ribbonTabItem2
             // 
             this.ribbonTabItem2.Checked = true;
@@ -99,15 +117,29 @@
             this.ribbonTabItem2.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2, 2, 2, 26);
             this.ribbonTabItem2.Text = "ribbonTabItem2";
             // 
-            // ribbonPanel2
+            // labelItem1
             // 
-            this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 25);
-            this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(800, 573);
-            this.ribbonPanel2.TabIndex = 2;
+            this.labelItem1.BorderSide = DevComponents.DotNetBar.eBorderSide.Top;
+            this.labelItem1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelItem1.Height = 20;
+            this.labelItem1.Name = "labelItem1";
+            this.labelItem1.PaddingBottom = 1;
+            this.labelItem1.Text = "查询：";
+            this.labelItem1.TextAlignment = System.Drawing.StringAlignment.Far;
+            this.labelItem1.Width = 80;
+            // 
+            // buttonItem15
+            // 
+            this.buttonItem15.AutoExpandOnClick = true;
+            this.buttonItem15.ImagePaddingHorizontal = 6;
+            this.buttonItem15.Name = "buttonItem15";
+            this.buttonItem15.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.labelItem2,
+            this.labelItem3,
+            this.labelItem4});
+            this.buttonItem15.SubItemsExpandWidth = 10;
+            this.buttonItem15.Text = "条件";
+            this.buttonItem15.Click += new System.EventHandler(this.buttonItem15_Click);
             // 
             // office2007StartButton1
             // 
@@ -122,12 +154,6 @@
             this.office2007StartButton1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.itemContainer1});
             this.office2007StartButton1.Text = "&File";
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.ImagePaddingHorizontal = 8;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "buttonItem1";
             // 
             // itemContainer1
             // 
@@ -312,109 +338,148 @@
             this.buttonItem13.SubItemsExpandWidth = 24;
             this.buttonItem13.Text = "E&xit";
             // 
+            // buttonItem1
+            // 
+            this.buttonItem1.ImagePaddingHorizontal = 8;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.Text = "buttonItem1";
+            // 
             // qatCustomizeItem1
             // 
             this.qatCustomizeItem1.Name = "qatCustomizeItem1";
             // 
-            // labelItem1
+            // labelItem2
             // 
-            this.labelItem1.BorderSide = DevComponents.DotNetBar.eBorderSide.Top;
-            this.labelItem1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelItem1.Height = 20;
-            this.labelItem1.Name = "labelItem1";
-            this.labelItem1.PaddingBottom = 1;
-            this.labelItem1.Text = "查询：";
-            this.labelItem1.TextAlignment = System.Drawing.StringAlignment.Far;
-            this.labelItem1.Width = 80;
+            this.labelItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.labelItem2.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
+            this.labelItem2.BorderType = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.labelItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(110)))));
+            this.labelItem2.Name = "labelItem2";
+            this.labelItem2.PaddingBottom = 1;
+            this.labelItem2.PaddingLeft = 8;
+            this.labelItem2.PaddingTop = 1;
+            this.labelItem2.SingleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.labelItem2.Text = "包含";
+            this.labelItem2.MouseLeave += new System.EventHandler(this.labelItem2_MouseLeave);
+            this.labelItem2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelItem2_MouseMove);
+            this.labelItem2.Click += new System.EventHandler(this.labelItem2_Click);
             // 
-            // textBoxItem1
+            // labelItem3
             // 
-            this.textBoxItem1.Name = "textBoxItem1";
-            this.textBoxItem1.WatermarkColor = System.Drawing.SystemColors.GrayText;
+            this.labelItem3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.labelItem3.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
+            this.labelItem3.BorderType = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.labelItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(110)))));
+            this.labelItem3.Name = "labelItem3";
+            this.labelItem3.PaddingBottom = 1;
+            this.labelItem3.PaddingLeft = 8;
+            this.labelItem3.PaddingTop = 1;
+            this.labelItem3.SingleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.labelItem3.Text = "不含";
+            this.labelItem3.MouseLeave += new System.EventHandler(this.labelItem2_MouseLeave);
+            this.labelItem3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelItem2_MouseMove);
+            this.labelItem3.Click += new System.EventHandler(this.labelItem2_Click);
             // 
-            // buttonItem14
+            // labelItem4
             // 
-            this.buttonItem14.ImagePaddingHorizontal = 8;
-            this.buttonItem14.Name = "buttonItem14";
-            this.buttonItem14.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
-            this.buttonItem14.SplitButton = true;
-            this.buttonItem14.Text = "buttonItem14";
+            this.labelItem4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(231)))), ((int)(((byte)(238)))));
+            this.labelItem4.BorderSide = DevComponents.DotNetBar.eBorderSide.Bottom;
+            this.labelItem4.BorderType = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.labelItem4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(110)))));
+            this.labelItem4.Name = "labelItem4";
+            this.labelItem4.PaddingBottom = 1;
+            this.labelItem4.PaddingLeft = 8;
+            this.labelItem4.PaddingTop = 1;
+            this.labelItem4.SingleLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.labelItem4.Text = "等于";
+            this.labelItem4.MouseLeave += new System.EventHandler(this.labelItem2_MouseLeave);
+            this.labelItem4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelItem2_MouseMove);
+            this.labelItem4.Click += new System.EventHandler(this.labelItem2_Click);
             // 
-            // buttonItem15
+            // comboBoxItem1
             // 
-            this.buttonItem15.ImagePaddingHorizontal = 0;
-            this.buttonItem15.ImagePaddingVertical = 0;
-            this.buttonItem15.Name = "buttonItem15";
-            this.buttonItem15.PopupSide = DevComponents.DotNetBar.ePopupSide.Bottom;
-            this.buttonItem15.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.itemContainer5,
-            this.itemContainer6,
-            this.itemContainer7});
-            this.buttonItem15.SubItemsExpandWidth = 10;
-            this.buttonItem15.Text = "条件";
-            this.buttonItem15.Click += new System.EventHandler(this.buttonItem15_Click);
+            this.comboBoxItem1.ComboWidth = 80;
+            this.comboBoxItem1.DropDownHeight = 150;
+            this.comboBoxItem1.ItemHeight = 16;
+            this.comboBoxItem1.Name = "comboBoxItem1";
+            this.comboBoxItem1.SelectedIndexChanged += new System.EventHandler(this.maskedTextBoxAdv1_TextChanged);
             // 
-            // itemContainer5
-            // 
-            // 
-            // 
-            // 
-            this.itemContainer5.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.itemContainer5.BackgroundStyle.BorderBottomColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarPopupBorder;
-            this.itemContainer5.BackgroundStyle.BorderBottomWidth = 1;
-            this.itemContainer5.BackgroundStyle.PaddingBottom = 1;
-            this.itemContainer5.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemContainer5.Name = "itemContainer5";
-            this.itemContainer5.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem16});
-            // 
-            // buttonItem16
-            // 
-            this.buttonItem16.ImagePaddingHorizontal = 8;
-            this.buttonItem16.Name = "buttonItem16";
-            this.buttonItem16.Text = " 包含 ";
-            // 
-            // itemContainer6
+            // textBoxX1
             // 
             // 
             // 
             // 
-            this.itemContainer6.BackgroundStyle.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.itemContainer6.BackgroundStyle.BorderBottomWidth = 1;
-            this.itemContainer6.BackgroundStyle.PaddingBottom = 1;
-            this.itemContainer6.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemContainer6.Name = "itemContainer6";
-            this.itemContainer6.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem17});
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Location = new System.Drawing.Point(614, 3);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.Size = new System.Drawing.Size(100, 21);
+            this.textBoxX1.TabIndex = 3;
             // 
-            // buttonItem17
+            // buttonX1
             // 
-            this.buttonItem17.ImagePaddingHorizontal = 8;
-            this.buttonItem17.Name = "buttonItem17";
-            this.buttonItem17.Text = " 不含 ";
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(439, 1);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
+            this.buttonX1.Size = new System.Drawing.Size(50, 23);
+            this.buttonX1.TabIndex = 3;
+            this.buttonX1.Text = "查询";
             // 
-            // itemContainer7
+            // dataGridViewX1
             // 
-            this.itemContainer7.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
-            this.itemContainer7.Name = "itemContainer7";
-            this.itemContainer7.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.buttonItem18});
+            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewX1.Location = new System.Drawing.Point(3, 0);
+            this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.RowTemplate.Height = 23;
+            this.dataGridViewX1.Size = new System.Drawing.Size(794, 568);
+            this.dataGridViewX1.TabIndex = 0;
             // 
-            // buttonItem18
+            // maskedTextBoxAdv1
             // 
-            this.buttonItem18.ImagePaddingHorizontal = 8;
-            this.buttonItem18.Name = "buttonItem18";
-            this.buttonItem18.Text = " 等于 ";
+            // 
+            // 
+            // 
+            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
+            this.maskedTextBoxAdv1.ButtonClear.Visible = true;
+            this.maskedTextBoxAdv1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskedTextBoxAdv1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.maskedTextBoxAdv1.Location = new System.Drawing.Point(311, 2);
+            this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
+            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(122, 21);
+            this.maskedTextBoxAdv1.TabIndex = 3;
+            this.maskedTextBoxAdv1.Text = "";
+            this.maskedTextBoxAdv1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.maskedTextBoxAdv1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskedTextBoxAdv1.TextChanged += new System.EventHandler(this.maskedTextBoxAdv1_TextChanged);
             // 
             // AddressBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.maskedTextBoxAdv1);
+            this.Controls.Add(this.buttonX1);
+            this.Controls.Add(this.textBoxX1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "AddressBook";
             this.Size = new System.Drawing.Size(800, 600);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
+            this.ribbonPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,15 +511,16 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.QatCustomizeItem qatCustomizeItem1;
         private DevComponents.DotNetBar.LabelItem labelItem1;
-        private DevComponents.DotNetBar.TextBoxItem textBoxItem1;
-        private DevComponents.DotNetBar.ButtonItem buttonItem14;
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
-        private DevComponents.DotNetBar.ItemContainer itemContainer5;
-        private DevComponents.DotNetBar.ButtonItem buttonItem16;
-        private DevComponents.DotNetBar.ItemContainer itemContainer6;
-        private DevComponents.DotNetBar.ButtonItem buttonItem17;
-        private DevComponents.DotNetBar.ItemContainer itemContainer7;
-        private DevComponents.DotNetBar.ButtonItem buttonItem18;
+        private DevComponents.DotNetBar.LabelItem labelItem2;
+        private DevComponents.DotNetBar.LabelItem labelItem3;
+        private DevComponents.DotNetBar.LabelItem labelItem4;
+        private DevComponents.DotNetBar.ComboBoxItem comboBoxItem1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv maskedTextBoxAdv1;
 
 
     }

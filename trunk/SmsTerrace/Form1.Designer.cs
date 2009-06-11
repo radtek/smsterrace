@@ -42,6 +42,7 @@
             this.dockSite2 = new DevComponents.DotNetBar.DockSite();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.panelDockContainer1 = new DevComponents.DotNetBar.PanelDockContainer();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dockContainerItem1 = new DevComponents.DotNetBar.DockContainerItem();
             this.dockSite8 = new DevComponents.DotNetBar.DockSite();
             this.dockSite5 = new DevComponents.DotNetBar.DockSite();
@@ -55,15 +56,25 @@
             this.sliderItem1 = new DevComponents.DotNetBar.SliderItem();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.ribbonClientPanel1 = new DevComponents.DotNetBar.Ribbon.RibbonClientPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.dockContainerItem2 = new DevComponents.DotNetBar.DockContainerItem();
+            this.panelDockContainer2 = new DevComponents.DotNetBar.PanelDockContainer();
+            this.dockContainerItem3 = new DevComponents.DotNetBar.DockContainerItem();
+            this.panelDockContainer3 = new DevComponents.DotNetBar.PanelDockContainer();
+            this.integerInput1 = new DevComponents.Editors.IntegerInput();
+            this.textBoxDropDown1 = new DevComponents.DotNetBar.Controls.TextBoxDropDown();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.panel1.SuspendLayout();
             this.dockSite2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             this.bar1.SuspendLayout();
             this.panelDockContainer1.SuspendLayout();
-            this.ribbonClientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ribbonClientPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonX1
@@ -147,7 +158,7 @@
             this.dotNetBarManager1.LeftDockSite = this.dockSite1;
             this.dotNetBarManager1.ParentForm = this;
             this.dotNetBarManager1.RightDockSite = this.dockSite2;
-            this.dotNetBarManager1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.dotNetBarManager1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.dotNetBarManager1.ToolbarBottomDockSite = this.dockSite8;
             this.dotNetBarManager1.ToolbarLeftDockSite = this.dockSite5;
             this.dotNetBarManager1.ToolbarRightDockSite = this.dockSite6;
@@ -191,31 +202,38 @@
             // 
             // bar1
             // 
-            this.bar1.AccessibleDescription = "DotNetBar Bar (bar1)";
-            this.bar1.AccessibleName = "DotNetBar Bar";
+            this.bar1.AccessibleDescription = "dockContainerItem1 (bar1)";
+            this.bar1.AccessibleName = "dockContainerItem1";
             this.bar1.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
             this.bar1.AutoSyncBarCaption = true;
             this.bar1.CloseSingleTab = true;
+            this.bar1.Controls.Add(this.panelDockContainer3);
+            this.bar1.Controls.Add(this.panelDockContainer2);
             this.bar1.Controls.Add(this.panelDockContainer1);
+            this.bar1.DockOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
             this.bar1.GrabHandleStyle = DevComponents.DotNetBar.eGrabHandleStyle.Caption;
             this.bar1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.dockContainerItem1});
+            this.dockContainerItem1,
+            this.dockContainerItem2,
+            this.dockContainerItem3});
             this.bar1.LayoutType = DevComponents.DotNetBar.eLayoutType.DockContainer;
             this.bar1.Location = new System.Drawing.Point(3, 0);
             this.bar1.Name = "bar1";
+            this.bar1.SelectedDockTab = 2;
             this.bar1.Size = new System.Drawing.Size(321, 425);
             this.bar1.Stretch = true;
-            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2003;
+            this.bar1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.bar1.TabIndex = 0;
             this.bar1.TabStop = false;
-            this.bar1.Text = "dockContainerItem1";
+            this.bar1.Text = "dockContainerItem3";
             // 
             // panelDockContainer1
             // 
+            this.panelDockContainer1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.panelDockContainer1.Controls.Add(this.dataGridView1);
             this.panelDockContainer1.Location = new System.Drawing.Point(3, 23);
             this.panelDockContainer1.Name = "panelDockContainer1";
-            this.panelDockContainer1.Size = new System.Drawing.Size(315, 399);
+            this.panelDockContainer1.Size = new System.Drawing.Size(315, 374);
             this.panelDockContainer1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelDockContainer1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
             this.panelDockContainer1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
@@ -223,6 +241,19 @@
             this.panelDockContainer1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
             this.panelDockContainer1.Style.GradientAngle = 90;
             this.panelDockContainer1.TabIndex = 0;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.Size = new System.Drawing.Size(315, 374);
+            this.dataGridView1.TabIndex = 19;
             // 
             // dockContainerItem1
             // 
@@ -341,26 +372,126 @@
             this.ribbonClientPanel1.TabIndex = 18;
             this.ribbonClientPanel1.Text = "ribbonClientPanel1";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(315, 399);
-            this.dataGridView1.TabIndex = 19;
-            // 
             // panel2
             // 
+            this.panel2.AutoScroll = true;
+            this.panel2.Controls.Add(this.maskedTextBoxAdv1);
+            this.panel2.Controls.Add(this.textBoxX1);
+            this.panel2.Controls.Add(this.textBoxDropDown1);
+            this.panel2.Controls.Add(this.integerInput1);
+            this.panel2.Controls.Add(this.buttonX2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(464, 425);
             this.panel2.TabIndex = 19;
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(201, 118);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(75, 23);
+            this.buttonX2.TabIndex = 0;
+            this.buttonX2.Text = "buttonX2";
+            // 
+            // dockContainerItem2
+            // 
+            this.dockContainerItem2.Control = this.panelDockContainer2;
+            this.dockContainerItem2.Name = "dockContainerItem2";
+            this.dockContainerItem2.Text = "dockContainerItem2";
+            // 
+            // panelDockContainer2
+            // 
+            this.panelDockContainer2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelDockContainer2.Location = new System.Drawing.Point(3, 23);
+            this.panelDockContainer2.Name = "panelDockContainer2";
+            this.panelDockContainer2.Size = new System.Drawing.Size(315, 374);
+            this.panelDockContainer2.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelDockContainer2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.panelDockContainer2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.panelDockContainer2.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.panelDockContainer2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.panelDockContainer2.Style.GradientAngle = 90;
+            this.panelDockContainer2.TabIndex = 2;
+            // 
+            // dockContainerItem3
+            // 
+            this.dockContainerItem3.Control = this.panelDockContainer3;
+            this.dockContainerItem3.Name = "dockContainerItem3";
+            this.dockContainerItem3.Text = "dockContainerItem3";
+            // 
+            // panelDockContainer3
+            // 
+            this.panelDockContainer3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.panelDockContainer3.Location = new System.Drawing.Point(3, 23);
+            this.panelDockContainer3.Name = "panelDockContainer3";
+            this.panelDockContainer3.Size = new System.Drawing.Size(315, 374);
+            this.panelDockContainer3.Style.Alignment = System.Drawing.StringAlignment.Center;
+            this.panelDockContainer3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.panelDockContainer3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.panelDockContainer3.Style.BorderColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.panelDockContainer3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.ItemText;
+            this.panelDockContainer3.Style.GradientAngle = 90;
+            this.panelDockContainer3.TabIndex = 3;
+            // 
+            // integerInput1
+            // 
+            // 
+            // 
+            // 
+            this.integerInput1.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.integerInput1.Location = new System.Drawing.Point(232, 167);
+            this.integerInput1.Name = "integerInput1";
+            this.integerInput1.ShowUpDown = true;
+            this.integerInput1.Size = new System.Drawing.Size(80, 21);
+            this.integerInput1.TabIndex = 3;
+            // 
+            // textBoxDropDown1
+            // 
+            this.textBoxDropDown1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.textBoxDropDown1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            // 
+            // 
+            // 
+            this.textBoxDropDown1.BackgroundStyle.Class = "TextBoxBorder";
+            this.textBoxDropDown1.ButtonDropDown.Visible = true;
+            this.textBoxDropDown1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.textBoxDropDown1.Location = new System.Drawing.Point(235, 35);
+            this.textBoxDropDown1.Name = "textBoxDropDown1";
+            this.textBoxDropDown1.Size = new System.Drawing.Size(75, 21);
+            this.textBoxDropDown1.TabIndex = 4;
+            this.textBoxDropDown1.Text = "";
+            this.textBoxDropDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // textBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Location = new System.Drawing.Point(238, 324);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.Size = new System.Drawing.Size(100, 21);
+            this.textBoxX1.TabIndex = 5;
+            // 
+            // maskedTextBoxAdv1
+            // 
+            // 
+            // 
+            // 
+            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
+            this.maskedTextBoxAdv1.ButtonClear.Visible = true;
+            this.maskedTextBoxAdv1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskedTextBoxAdv1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.maskedTextBoxAdv1.Location = new System.Drawing.Point(240, 392);
+            this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
+            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(75, 21);
+            this.maskedTextBoxAdv1.TabIndex = 7;
+            this.maskedTextBoxAdv1.Text = "";
+            this.maskedTextBoxAdv1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.maskedTextBoxAdv1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
             // 
             // Form1
             // 
@@ -388,8 +519,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).EndInit();
             this.bar1.ResumeLayout(false);
             this.panelDockContainer1.ResumeLayout(false);
-            this.ribbonClientPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.ribbonClientPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -424,6 +557,15 @@
         private DevComponents.DotNetBar.SliderItem sliderItem1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel2;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.PanelDockContainer panelDockContainer3;
+        private DevComponents.DotNetBar.PanelDockContainer panelDockContainer2;
+        private DevComponents.DotNetBar.DockContainerItem dockContainerItem2;
+        private DevComponents.DotNetBar.DockContainerItem dockContainerItem3;
+        private DevComponents.Editors.IntegerInput integerInput1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxDropDown textBoxDropDown1;
+        private DevComponents.DotNetBar.Controls.MaskedTextBoxAdv maskedTextBoxAdv1;
 
     }
 }

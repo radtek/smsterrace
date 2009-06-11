@@ -176,6 +176,7 @@ namespace HzTerrace.BLL
 		//}
 
 		#endregion  成员方法
+        
 	}
 }
 
