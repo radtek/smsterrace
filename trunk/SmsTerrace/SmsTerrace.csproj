@@ -145,6 +145,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>AddressBook.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\ContactInfo.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ContactInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UseCtrl\OperFilePanel.resx">
       <SubType>Designer</SubType>
       <DependentUpon>OperFilePanel.cs</DependentUpon>
@@ -232,6 +236,12 @@
     </Compile>
     <Compile Include="UI\UseCtrl\AddressBook.Designer.cs">
       <DependentUpon>AddressBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\ContactInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\ContactInfo.Designer.cs">
+      <DependentUpon>ContactInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UseCtrl\HzScrollBar.cs">
     </Compile>

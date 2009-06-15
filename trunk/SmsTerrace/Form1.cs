@@ -21,6 +21,7 @@ namespace SmsTerrace
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.FilterIndex = 1;
             panel2.Controls.Add(new AddressBook());
+            controlContainerItem4.Control=advTree1;
         }
 
 
@@ -119,6 +120,11 @@ namespace SmsTerrace
         {
             hScrollBar1.BackColor = Color.Red;//.Height = 100;
             //System.Windows.Forms.SafeNativeMethods.ShowWindow(1235,222);
+        }
+
+        private void advTree1_NodeDoubleClick(object sender, DevComponents.AdvTree.TreeNodeMouseEventArgs e)
+        {
+            buttonX2.Expanded = false;
         }
 
 
