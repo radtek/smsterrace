@@ -16,11 +16,11 @@ namespace SmsTerrace.UI.UseCtrl
         public AddressBook()
         {
             InitializeComponent();
-           DataTable dt=  relBLL.GetAllList().Tables[0];
-            dt.Columns.Add("sexStr",typeof(string));
+            DataTable dt = relBLL.GetAllList().Tables[0];
+            dt.Columns.Add("sexStr", typeof(string));
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                dt.Rows[i]["sexStr"] = (bool)dt.Rows[i]["sex"] ? "男" : "女"; 
+                dt.Rows[i]["sexStr"] = (bool)dt.Rows[i]["sex"] ? "男" : "女";
             }
             bindingSource1.DataSource = dt;
             dataGridViewX1.DataSource = bindingSource1;
@@ -29,9 +29,9 @@ namespace SmsTerrace.UI.UseCtrl
         void DataGridViewProcess()
         {
             dataGridViewX1.Columns["pertainUser"].Visible = false;
-           
+
             dataGridViewX1.Columns["sex"].Visible = false;
-       
+
             //dataGridViewX1.Columns["name"].HeaderText = "姓名";
             //dataGridViewX1.Columns["sex"].HeaderText = "性别";
             //dataGridViewX1.Columns["phone1"].HeaderText = "电话";
@@ -57,10 +57,10 @@ namespace SmsTerrace.UI.UseCtrl
                 dataGridViewX1.Columns[item.Value.ToString()].HeaderText = item.Key.ToString();
                 comboBoxItem1.Items.Add(item);
             }
-            comboBoxItem1.Items.Insert(0,new DictionaryEntry("全部","all"));
+            comboBoxItem1.Items.Insert(0, new DictionaryEntry("全部", "all"));
             comboBoxItem1.DisplayMember = "Key";
         }
-        
+
         private void buttonItem15_Click(object sender, EventArgs e)
         {
 
@@ -69,25 +69,76 @@ namespace SmsTerrace.UI.UseCtrl
         private void labelItem2_MouseMove(object sender, MouseEventArgs e)
         {
             LabelItem lable = sender as LabelItem;
-            lable.BackColor = Color.FromArgb(251, 241, 170); 
+            lable.BackColor = Color.FromArgb(251, 241, 170);
         }
 
         private void labelItem2_MouseLeave(object sender, EventArgs e)
         {
             LabelItem lable = sender as LabelItem;
-            lable.BackColor = Color.FromArgb(221, 231, 238);           
+            lable.BackColor = Color.FromArgb(221, 231, 238);
         }
 
         private void labelItem2_Click(object sender, EventArgs e)
         {
             LabelItem lable = sender as LabelItem;
-            buttonItem15.Text = lable.Text; 
+            buttonItem15.Text = lable.Text;
         }
 
         private void maskedTextBoxAdv1_TextChanged(object sender, EventArgs e)
         {
             DictionaryEntry dicE = (DictionaryEntry)comboBoxItem1.SelectedItem;
-            bindingSource1.Filter = dicE.Value + "='" + maskedTextBoxAdv1.Text+"'";
+
+            string whereType = buttonItem15.Text;
+               string colName= dicE.Value.ToString();
+               string whereStr = maskedTextBoxAdv1.Text;
+            if (dicE.Key == "全部")
+            {
+                bindingSource1.Filter = "";
+            }
+            else
+            {
+               FilterRow(whereType, colName, whereStr);
+               return;
+                
+            }
+        }
+
+        private void FilterRow(string whereType, string colName, string whereStr)
+        {
+           string filterStr="";
+            switch (whereType)
+            {
+                case "包含": filterStr = colName + "+'' like '%" + whereStr + "%'";
+                    break;
+                case "不含": filterStr = colName + "+'' not like '%" + whereStr + "%'";
+                    break;
+                case "等于": filterStr = colName + "+'' = '" + whereStr + "'";
+                    break;
+                default:
+                    break;
+            }
+            bindingSource1.Filter=filterStr;
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            maskedTextBoxAdv1_TextChanged(null,null);
+        }
+
+        private void tToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dataGridViewX1.SelectAll();
+        }
+
+        private void 添加ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ContactInfo conInfo = new ContactInfo();
+            conInfo.ShowDialog();
         }
     }
 }
