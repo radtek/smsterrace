@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContactInfo));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -49,8 +51,14 @@
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem14 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem15 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
+            this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.itemContainer5 = new DevComponents.DotNetBar.ItemContainer();
             this.controlContainerItem2 = new DevComponents.DotNetBar.ControlContainerItem();
@@ -58,6 +66,7 @@
             this.node3 = new DevComponents.AdvTree.Node();
             this.node2 = new DevComponents.AdvTree.Node();
             this.node4 = new DevComponents.AdvTree.Node();
+            this.node1 = new DevComponents.AdvTree.Node();
             this.nodeConnector1 = new DevComponents.AdvTree.NodeConnector();
             this.elementStyle1 = new DevComponents.DotNetBar.ElementStyle();
             this.elementStyle2 = new DevComponents.DotNetBar.ElementStyle();
@@ -79,12 +88,14 @@
             this.textBoxX4 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX8 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.textBoxX7 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.node1 = new DevComponents.AdvTree.Node();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ribbonPanel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.SuspendLayout();
@@ -100,12 +111,21 @@
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
             this.ribbonControl1.QuickToolbarItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.office2007StartButton1,
-            this.buttonItem1});
-            this.ribbonControl1.Size = new System.Drawing.Size(584, 28);
+            this.buttonItem1,
+            this.buttonItem14,
+            this.buttonItem15});
+            this.ribbonControl1.Size = new System.Drawing.Size(592, 28);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "详细信息";
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.ImagePaddingHorizontal = 8;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.Text = "<b> 确定 </b>";
+            this.buttonItem1.Click += new System.EventHandler(this.buttonItem1_Click);
             // 
             // office2007StartButton1
             // 
@@ -293,7 +313,7 @@
             this.buttonItem12.ImagePaddingHorizontal = 8;
             this.buttonItem12.Name = "buttonItem12";
             this.buttonItem12.SubItemsExpandWidth = 24;
-            this.buttonItem12.Text = "Opt&ions";
+            this.buttonItem12.Text = "&Options";
             // 
             // buttonItem13
             // 
@@ -303,18 +323,27 @@
             this.buttonItem13.ImagePaddingHorizontal = 8;
             this.buttonItem13.Name = "buttonItem13";
             this.buttonItem13.SubItemsExpandWidth = 24;
-            this.buttonItem13.Text = "E&xit";
+            this.buttonItem13.Text = "&Exit";
             // 
-            // buttonItem1
+            // buttonItem14
             // 
-            this.buttonItem1.ImagePaddingHorizontal = 8;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "buttonItem1";
+            this.buttonItem14.ImagePaddingHorizontal = 8;
+            this.buttonItem14.Name = "buttonItem14";
+            this.buttonItem14.Text = "<b> 应用 </b>";
+            this.buttonItem14.Click += new System.EventHandler(this.buttonItem14_Click);
+            // 
+            // buttonItem15
+            // 
+            this.buttonItem15.ImagePaddingHorizontal = 8;
+            this.buttonItem15.Name = "buttonItem15";
+            this.buttonItem15.Text = "<b> 取消 </b>";
             // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.ribbonPanel2.Controls.Add(this.groupBox1);
+            this.ribbonPanel2.Controls.Add(this.buttonX1);
             this.ribbonPanel2.Controls.Add(this.buttonX2);
             this.ribbonPanel2.Controls.Add(this.advTree1);
             this.ribbonPanel2.Controls.Add(this.dateTimeInput1);
@@ -333,7 +362,6 @@
             this.ribbonPanel2.Controls.Add(this.textBoxX4);
             this.ribbonPanel2.Controls.Add(this.textBoxX3);
             this.ribbonPanel2.Controls.Add(this.textBoxX8);
-            this.ribbonPanel2.Controls.Add(this.textBoxX7);
             this.ribbonPanel2.Controls.Add(this.textBoxX6);
             this.ribbonPanel2.Controls.Add(this.textBoxX2);
             this.ribbonPanel2.Controls.Add(this.textBoxX1);
@@ -341,16 +369,80 @@
             this.ribbonPanel2.Location = new System.Drawing.Point(4, 29);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.ribbonPanel2.Size = new System.Drawing.Size(584, 393);
+            this.ribbonPanel2.Size = new System.Drawing.Size(592, 419);
             this.ribbonPanel2.TabIndex = 4;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.dataGridViewX1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 239);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(580, 174);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "扩展信息";
+            // 
+            // dataGridViewX1
+            // 
+            this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewX1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
+            this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
+            this.dataGridViewX1.Location = new System.Drawing.Point(3, 17);
+            this.dataGridViewX1.Name = "dataGridViewX1";
+            this.dataGridViewX1.RowTemplate.Height = 23;
+            this.dataGridViewX1.Size = new System.Drawing.Size(574, 154);
+            this.dataGridViewX1.TabIndex = 0;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Image = global::SmsTerrace.Properties.Resources._2009_01_19_153059;
+            this.buttonX1.ImageFixedSize = new System.Drawing.Size(100, 100);
+            this.buttonX1.Location = new System.Drawing.Point(298, 3);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
+            this.buttonX1.Size = new System.Drawing.Size(120, 102);
+            this.buttonX1.SplitButton = true;
+            this.buttonX1.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.itemContainer6});
+            this.buttonX1.TabIndex = 7;
+            this.buttonX1.Text = " ";
+            this.buttonX1.TextAlignment = DevComponents.DotNetBar.eButtonTextAlignment.Left;
+            // 
+            // itemContainer6
+            // 
+            this.itemContainer6.LayoutOrientation = DevComponents.DotNetBar.eOrientation.Vertical;
+            this.itemContainer6.Name = "itemContainer6";
+            this.itemContainer6.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.labelItem1});
+            // 
+            // labelItem1
+            // 
+            this.labelItem1.Name = "labelItem1";
+            this.labelItem1.Text = "更换照片";
             // 
             // buttonX2
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(298, 133);
+            this.buttonX2.Location = new System.Drawing.Point(298, 161);
             this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(200, 23);
+            this.buttonX2.Size = new System.Drawing.Size(145, 23);
             this.buttonX2.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.itemContainer5});
             this.buttonX2.TabIndex = 5;
@@ -383,7 +475,7 @@
             this.advTree1.ColumnsVisible = false;
             this.advTree1.GridColumnLines = false;
             this.advTree1.HotTracking = true;
-            this.advTree1.Location = new System.Drawing.Point(240, 288);
+            this.advTree1.Location = new System.Drawing.Point(459, 6);
             this.advTree1.Name = "advTree1";
             this.advTree1.Nodes.AddRange(new DevComponents.AdvTree.Node[] {
             this.node3});
@@ -415,9 +507,14 @@
             // 
             // node4
             // 
-            this.node4.Expanded = true;
             this.node4.Name = "node4";
             this.node4.Text = "亲友";
+            // 
+            // node1
+            // 
+            this.node1.Expanded = true;
+            this.node1.Name = "node1";
+            this.node1.Text = "同事";
             // 
             // nodeConnector1
             // 
@@ -439,7 +536,7 @@
             // 
             this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dateTimeInput1.ButtonDropDown.Visible = true;
-            this.dateTimeInput1.Location = new System.Drawing.Point(298, 54);
+            this.dateTimeInput1.Location = new System.Drawing.Point(72, 80);
             this.dateTimeInput1.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.dateTimeInput1.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
@@ -472,13 +569,13 @@
             this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
             this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.dateTimeInput1.Name = "dateTimeInput1";
-            this.dateTimeInput1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimeInput1.Size = new System.Drawing.Size(120, 21);
             this.dateTimeInput1.TabIndex = 4;
             // 
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Location = new System.Drawing.Point(6, 106);
+            this.labelX5.Location = new System.Drawing.Point(6, 134);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(60, 23);
             this.labelX5.TabIndex = 3;
@@ -487,7 +584,7 @@
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Location = new System.Drawing.Point(233, 79);
+            this.labelX4.Location = new System.Drawing.Point(233, 107);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(60, 23);
             this.labelX4.TabIndex = 3;
@@ -496,7 +593,7 @@
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Location = new System.Drawing.Point(6, 79);
+            this.labelX3.Location = new System.Drawing.Point(6, 107);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(60, 23);
             this.labelX3.TabIndex = 3;
@@ -505,7 +602,7 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Location = new System.Drawing.Point(233, 50);
+            this.labelX7.Location = new System.Drawing.Point(6, 80);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(60, 23);
             this.labelX7.TabIndex = 3;
@@ -514,7 +611,7 @@
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Location = new System.Drawing.Point(6, 52);
+            this.labelX6.Location = new System.Drawing.Point(6, 53);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(60, 23);
             this.labelX6.TabIndex = 3;
@@ -523,7 +620,7 @@
             // labelX10
             // 
             this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Location = new System.Drawing.Point(6, 160);
+            this.labelX10.Location = new System.Drawing.Point(6, 188);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(60, 23);
             this.labelX10.TabIndex = 3;
@@ -532,7 +629,7 @@
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Location = new System.Drawing.Point(233, 133);
+            this.labelX9.Location = new System.Drawing.Point(233, 161);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(60, 23);
             this.labelX9.TabIndex = 3;
@@ -541,7 +638,7 @@
             // labelX8
             // 
             this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Location = new System.Drawing.Point(6, 133);
+            this.labelX8.Location = new System.Drawing.Point(6, 161);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(60, 23);
             this.labelX8.TabIndex = 3;
@@ -550,7 +647,7 @@
             // labelX2
             // 
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(233, 106);
+            this.labelX2.Location = new System.Drawing.Point(233, 134);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(60, 23);
             this.labelX2.TabIndex = 3;
@@ -575,7 +672,7 @@
             this.comboBoxEx1.Items.AddRange(new object[] {
             this.comboItem1,
             this.comboItem2});
-            this.comboBoxEx1.Location = new System.Drawing.Point(72, 52);
+            this.comboBoxEx1.Location = new System.Drawing.Point(72, 53);
             this.comboBoxEx1.Name = "comboBoxEx1";
             this.comboBoxEx1.Size = new System.Drawing.Size(120, 21);
             this.comboBoxEx1.TabIndex = 2;
@@ -594,7 +691,7 @@
             // 
             // 
             this.textBoxX5.Border.Class = "TextBoxBorder";
-            this.textBoxX5.Location = new System.Drawing.Point(72, 106);
+            this.textBoxX5.Location = new System.Drawing.Point(72, 134);
             this.textBoxX5.Name = "textBoxX5";
             this.textBoxX5.Size = new System.Drawing.Size(120, 21);
             this.textBoxX5.TabIndex = 1;
@@ -605,18 +702,19 @@
             // 
             // 
             this.textBoxX4.Border.Class = "TextBoxBorder";
-            this.textBoxX4.Location = new System.Drawing.Point(298, 79);
+            this.textBoxX4.Location = new System.Drawing.Point(298, 107);
             this.textBoxX4.Name = "textBoxX4";
-            this.textBoxX4.Size = new System.Drawing.Size(270, 21);
+            this.textBoxX4.Size = new System.Drawing.Size(288, 21);
             this.textBoxX4.TabIndex = 1;
             // 
             // textBoxX3
             // 
+            this.textBoxX3.BackColor = System.Drawing.SystemColors.Window;
             // 
             // 
             // 
             this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(72, 79);
+            this.textBoxX3.Location = new System.Drawing.Point(72, 107);
             this.textBoxX3.Name = "textBoxX3";
             this.textBoxX3.Size = new System.Drawing.Size(120, 21);
             this.textBoxX3.TabIndex = 1;
@@ -627,22 +725,11 @@
             // 
             // 
             this.textBoxX8.Border.Class = "TextBoxBorder";
-            this.textBoxX8.Location = new System.Drawing.Point(72, 160);
+            this.textBoxX8.Location = new System.Drawing.Point(72, 188);
             this.textBoxX8.Multiline = true;
             this.textBoxX8.Name = "textBoxX8";
-            this.textBoxX8.Size = new System.Drawing.Size(500, 45);
+            this.textBoxX8.Size = new System.Drawing.Size(514, 45);
             this.textBoxX8.TabIndex = 1;
-            // 
-            // textBoxX7
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX7.Border.Class = "TextBoxBorder";
-            this.textBoxX7.Location = new System.Drawing.Point(72, 225);
-            this.textBoxX7.Name = "textBoxX7";
-            this.textBoxX7.Size = new System.Drawing.Size(270, 21);
-            this.textBoxX7.TabIndex = 1;
             // 
             // textBoxX6
             // 
@@ -650,7 +737,7 @@
             // 
             // 
             this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Location = new System.Drawing.Point(72, 133);
+            this.textBoxX6.Location = new System.Drawing.Point(72, 161);
             this.textBoxX6.Name = "textBoxX6";
             this.textBoxX6.Size = new System.Drawing.Size(120, 21);
             this.textBoxX6.TabIndex = 1;
@@ -661,9 +748,9 @@
             // 
             // 
             this.textBoxX2.Border.Class = "TextBoxBorder";
-            this.textBoxX2.Location = new System.Drawing.Point(298, 106);
+            this.textBoxX2.Location = new System.Drawing.Point(298, 134);
             this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.Size = new System.Drawing.Size(270, 21);
+            this.textBoxX2.Size = new System.Drawing.Size(288, 21);
             this.textBoxX2.TabIndex = 1;
             // 
             // textBoxX1
@@ -677,25 +764,34 @@
             this.textBoxX1.Size = new System.Drawing.Size(120, 21);
             this.textBoxX1.TabIndex = 1;
             // 
-            // node1
+            // Column1
             // 
-            this.node1.Expanded = true;
-            this.node1.Name = "node1";
-            this.node1.Text = "同事";
+            this.Column1.FillWeight = 30F;
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
             // 
             // ContactInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(592, 424);
+            this.ClientSize = new System.Drawing.Size(600, 450);
             this.Controls.Add(this.ribbonPanel2);
             this.Controls.Add(this.ribbonControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(600, 450);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(600, 450);
             this.Name = "ContactInfo";
             this.Text = "ContactInfo";
             this.ribbonPanel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advTree1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.ResumeLayout(false);
@@ -741,7 +837,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX4;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX7;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
@@ -759,5 +854,14 @@
         private DevComponents.DotNetBar.ControlContainerItem controlContainerItem2;
         private DevComponents.DotNetBar.ElementStyle elementStyle2;
         private DevComponents.AdvTree.Node node1;
+        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ItemContainer itemContainer6;
+        private DevComponents.DotNetBar.LabelItem labelItem1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private DevComponents.DotNetBar.ButtonItem buttonItem14;
+        private DevComponents.DotNetBar.ButtonItem buttonItem15;
+        private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
