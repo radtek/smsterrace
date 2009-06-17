@@ -127,7 +127,38 @@ namespace SmsTerrace.UI.UseCtrl
 
         private void tToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (dataGridViewX1.SelectedRows.Count==1)
+            {
+                
+                ContactInfo conInfo = new ContactInfo(GetSelectRelModel());
+               conInfo.ShowDialog();
+            }
+            else if (dataGridViewX1.SelectedRows.Count>1)
+            {
+                MessageBoxEx.Show("共选中" + dataGridViewX1.SelectedRows.Count + "个联系人！");
+            }
+         
+        }
 
+        private HzTerrace.Model.relation GetSelectRelModel()
+        {
+            HzTerrace.Model.relation relM = new HzTerrace.Model.relation();
+            DataGridViewRow dgvr = dataGridViewX1.SelectedRows[0];
+            relM.id = dgvr.Cells["id"].Value as int?;
+            relM.group = (int)dgvr.Cells["group"].Value;
+            relM.name = dgvr.Cells["name"].Value as string;
+            relM.pertainUser = (int)dgvr.Cells["pertainUser"].Value;
+            relM.phone1 = dgvr.Cells["phone1"].Value as string;
+            relM.phone2 = dgvr.Cells["phone2"].Value as string;
+            relM.remark = dgvr.Cells["remark"].Value as string;
+            relM.sex = (bool)dgvr.Cells["sex"].Value;
+            relM.status = (int)dgvr.Cells["status"].Value;
+            relM.address = dgvr.Cells["address"].Value as string;
+            relM.birthday = dgvr.Cells["birthday"].Value as DateTime?;
+          
+            relM.company = dgvr.Cells["company"].Value as string;
+            relM.email = dgvr.Cells["email"].Value as string;
+            return relM;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

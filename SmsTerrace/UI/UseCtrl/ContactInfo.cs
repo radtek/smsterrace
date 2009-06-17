@@ -21,10 +21,11 @@ namespace SmsTerrace.UI.UseCtrl
             InitializeComponentAdded(); 
         }
         public ContactInfo(HzTerrace.Model.relation entity)
-        {
+        {  // ContactInfo();
             nowRel = entity;
             isAdd = false;
-            ContactInfo();
+            InitializeComponent();
+            InitializeComponentAdded(); 
         }
         private void InitializeComponentAdded()
         {
@@ -43,8 +44,8 @@ namespace SmsTerrace.UI.UseCtrl
         private void SetNowRelation()
         {
             textBoxX1.Text = nowRel.name;
-            comboBoxEx1.SelectedText = nowRel.sex ? "男" : "女";
-            dateTimeInput1.Value = nowRel.birthday;
+            comboBoxEx1.SelectedIndex = nowRel.sex ? 0 : 1;
+            dateTimeInput1.Value = nowRel.birthday.GetValueOrDefault();
             textBoxX2.Text = nowRel.address;
             textBoxX3.Text = nowRel.phone1;
             textBoxX4.Text = nowRel.company;
@@ -60,11 +61,17 @@ namespace SmsTerrace.UI.UseCtrl
             buttonX2.Text = treeTemp.SelectedNode.Text;
             buttonX2.Expanded = false;
         }
-        
+
         private void buttonItem14_Click(object sender, EventArgs e)
         {
             HzTerrace.Model.relation relModel = GetNowRelation();
-            relBLL.Add(relModel);
+            if (isAdd)
+            {
+                relBLL.Add(relModel);
+            }
+            else {
+                relBLL.Update(relModel);
+            }
         }
 
         private HzTerrace.Model.relation GetNowRelation()
@@ -98,7 +105,16 @@ namespace SmsTerrace.UI.UseCtrl
         private void buttonItem1_Click(object sender, EventArgs e)
         {
             HzTerrace.Model.relation relModel = GetNowRelation();
-
+            if (isAdd)
+            {
+                relBLL.Add(relModel);
+            }
+            else
+            {
+                relBLL.Update(relModel);
+            }
+            this.Close();
+            this.Dispose();
         }
     }
 }

@@ -34,6 +34,15 @@
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.faToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.发送彩信ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
             this.comboBoxItem1 = new DevComponents.DotNetBar.ComboBoxItem();
@@ -41,20 +50,6 @@
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
             this.labelItem3 = new DevComponents.DotNetBar.LabelItem();
             this.labelItem4 = new DevComponents.DotNetBar.LabelItem();
-            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
-            this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.添加ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.faToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.发送彩信ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.office2007StartButton1 = new DevComponents.DotNetBar.Office2007StartButton();
             this.itemContainer1 = new DevComponents.DotNetBar.ItemContainer();
             this.itemContainer2 = new DevComponents.DotNetBar.ItemContainer();
@@ -74,6 +69,11 @@
             this.itemContainer4 = new DevComponents.DotNetBar.ItemContainer();
             this.buttonItem12 = new DevComponents.DotNetBar.ButtonItem();
             this.buttonItem13 = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem1 = new DevComponents.DotNetBar.ButtonItem();
+            this.qatCustomizeItem1 = new DevComponents.DotNetBar.QatCustomizeItem();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.maskedTextBoxAdv1 = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.ribbonControl1.SuspendLayout();
             this.ribbonPanel2.SuspendLayout();
@@ -138,6 +138,71 @@
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.Size = new System.Drawing.Size(794, 568);
             this.dataGridViewX1.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2,
+            this.toolStripSeparator1,
+            this.添加ToolStripMenuItem,
+            this.删除ToolStripMenuItem,
+            this.tToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 142);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem1.Text = "全选";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.faToolStripMenuItem,
+            this.发送彩信ToolStripMenuItem});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.toolStripMenuItem2.Text = "发送信息";
+            // 
+            // faToolStripMenuItem
+            // 
+            this.faToolStripMenuItem.Name = "faToolStripMenuItem";
+            this.faToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.faToolStripMenuItem.Text = "发送短信";
+            // 
+            // 发送彩信ToolStripMenuItem
+            // 
+            this.发送彩信ToolStripMenuItem.Name = "发送彩信ToolStripMenuItem";
+            this.发送彩信ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
+            this.发送彩信ToolStripMenuItem.Text = "发送彩信";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            // 
+            // 添加ToolStripMenuItem
+            // 
+            this.添加ToolStripMenuItem.Name = "添加ToolStripMenuItem";
+            this.添加ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.添加ToolStripMenuItem.Text = "添加";
+            this.添加ToolStripMenuItem.Click += new System.EventHandler(this.添加ToolStripMenuItem_Click);
+            // 
+            // 删除ToolStripMenuItem
+            // 
+            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除ToolStripMenuItem.Text = "删除";
+            // 
+            // tToolStripMenuItem
+            // 
+            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
+            this.tToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.tToolStripMenuItem.Text = "详细";
+            this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
             // 
             // ribbonTabItem2
             // 
@@ -226,123 +291,6 @@
             this.labelItem4.MouseLeave += new System.EventHandler(this.labelItem2_MouseLeave);
             this.labelItem4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.labelItem2_MouseMove);
             this.labelItem4.Click += new System.EventHandler(this.labelItem2_Click);
-            // 
-            // buttonItem1
-            // 
-            this.buttonItem1.ImagePaddingHorizontal = 8;
-            this.buttonItem1.Name = "buttonItem1";
-            this.buttonItem1.Text = "buttonItem1";
-            // 
-            // qatCustomizeItem1
-            // 
-            this.qatCustomizeItem1.Name = "qatCustomizeItem1";
-            // 
-            // textBoxX1
-            // 
-            // 
-            // 
-            // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Location = new System.Drawing.Point(614, 3);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(100, 21);
-            this.textBoxX1.TabIndex = 3;
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.BackColor = System.Drawing.Color.Transparent;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(439, 1);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
-            this.buttonX1.Size = new System.Drawing.Size(50, 23);
-            this.buttonX1.TabIndex = 3;
-            this.buttonX1.Text = "查询";
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // maskedTextBoxAdv1
-            // 
-            // 
-            // 
-            // 
-            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
-            this.maskedTextBoxAdv1.ButtonClear.Visible = true;
-            this.maskedTextBoxAdv1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.maskedTextBoxAdv1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
-            this.maskedTextBoxAdv1.Location = new System.Drawing.Point(311, 2);
-            this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
-            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(122, 21);
-            this.maskedTextBoxAdv1.TabIndex = 3;
-            this.maskedTextBoxAdv1.Text = "";
-            this.maskedTextBoxAdv1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.maskedTextBoxAdv1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
-            this.maskedTextBoxAdv1.TextChanged += new System.EventHandler(this.maskedTextBoxAdv1_TextChanged);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2,
-            this.toolStripSeparator1,
-            this.添加ToolStripMenuItem,
-            this.删除ToolStripMenuItem,
-            this.tToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 142);
-            // 
-            // tToolStripMenuItem
-            // 
-            this.tToolStripMenuItem.Name = "tToolStripMenuItem";
-            this.tToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.tToolStripMenuItem.Text = "详细";
-            this.tToolStripMenuItem.Click += new System.EventHandler(this.tToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // 添加ToolStripMenuItem
-            // 
-            this.添加ToolStripMenuItem.Name = "添加ToolStripMenuItem";
-            this.添加ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.添加ToolStripMenuItem.Text = "添加";
-            this.添加ToolStripMenuItem.Click += new System.EventHandler(this.添加ToolStripMenuItem_Click);
-            // 
-            // 删除ToolStripMenuItem
-            // 
-            this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.删除ToolStripMenuItem.Text = "删除";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem1.Text = "全选";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.faToolStripMenuItem,
-            this.发送彩信ToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
-            this.toolStripMenuItem2.Text = "发送信息";
-            // 
-            // faToolStripMenuItem
-            // 
-            this.faToolStripMenuItem.Name = "faToolStripMenuItem";
-            this.faToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.faToolStripMenuItem.Text = "发送短信";
-            // 
-            // 发送彩信ToolStripMenuItem
-            // 
-            this.发送彩信ToolStripMenuItem.Name = "发送彩信ToolStripMenuItem";
-            this.发送彩信ToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
-            this.发送彩信ToolStripMenuItem.Text = "发送彩信";
             // 
             // office2007StartButton1
             // 
@@ -540,6 +488,58 @@
             this.buttonItem13.Name = "buttonItem13";
             this.buttonItem13.SubItemsExpandWidth = 24;
             this.buttonItem13.Text = "E&xit";
+            // 
+            // buttonItem1
+            // 
+            this.buttonItem1.ImagePaddingHorizontal = 8;
+            this.buttonItem1.Name = "buttonItem1";
+            this.buttonItem1.Text = "buttonItem1";
+            // 
+            // qatCustomizeItem1
+            // 
+            this.qatCustomizeItem1.Name = "qatCustomizeItem1";
+            // 
+            // textBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Location = new System.Drawing.Point(614, 3);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.Size = new System.Drawing.Size(100, 21);
+            this.textBoxX1.TabIndex = 3;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.BackColor = System.Drawing.Color.Transparent;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(439, 1);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Shape = new DevComponents.DotNetBar.RoundRectangleShapeDescriptor(2);
+            this.buttonX1.Size = new System.Drawing.Size(50, 23);
+            this.buttonX1.TabIndex = 3;
+            this.buttonX1.Text = "查询";
+            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
+            // 
+            // maskedTextBoxAdv1
+            // 
+            // 
+            // 
+            // 
+            this.maskedTextBoxAdv1.BackgroundStyle.Class = "TextBoxBorder";
+            this.maskedTextBoxAdv1.ButtonClear.Visible = true;
+            this.maskedTextBoxAdv1.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskedTextBoxAdv1.InsertKeyMode = System.Windows.Forms.InsertKeyMode.Default;
+            this.maskedTextBoxAdv1.Location = new System.Drawing.Point(311, 2);
+            this.maskedTextBoxAdv1.Name = "maskedTextBoxAdv1";
+            this.maskedTextBoxAdv1.Size = new System.Drawing.Size(122, 21);
+            this.maskedTextBoxAdv1.TabIndex = 3;
+            this.maskedTextBoxAdv1.Text = "";
+            this.maskedTextBoxAdv1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.maskedTextBoxAdv1.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludeLiterals;
+            this.maskedTextBoxAdv1.TextChanged += new System.EventHandler(this.maskedTextBoxAdv1_TextChanged);
             // 
             // AddressBook
             // 
