@@ -16,6 +16,12 @@ namespace SmsTerrace.UI.UseCtrl
         public AddressBook()
         {
             InitializeComponent();
+            InitDataView();
+            DataGridViewProcess();
+        }
+
+        private void InitDataView()
+        {
             DataTable dt = relBLL.GetAllList().Tables[0];
             dt.Columns.Add("sexStr", typeof(string));
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -24,7 +30,7 @@ namespace SmsTerrace.UI.UseCtrl
             }
             bindingSource1.DataSource = dt;
             dataGridViewX1.DataSource = bindingSource1;
-            DataGridViewProcess();
+          
         }
         void DataGridViewProcess()
         {
@@ -59,6 +65,7 @@ namespace SmsTerrace.UI.UseCtrl
             }
             comboBoxItem1.Items.Insert(0, new DictionaryEntry("全部", "all"));
             comboBoxItem1.DisplayMember = "Key";
+         //   comboBoxItem1.SelectedIndex = 0;
         }
 
         private void buttonItem15_Click(object sender, EventArgs e)
@@ -86,20 +93,23 @@ namespace SmsTerrace.UI.UseCtrl
 
         private void maskedTextBoxAdv1_TextChanged(object sender, EventArgs e)
         {
-            DictionaryEntry dicE = (DictionaryEntry)comboBoxItem1.SelectedItem;
-
-            string whereType = buttonItem15.Text;
-               string colName= dicE.Value.ToString();
-               string whereStr = maskedTextBoxAdv1.Text;
-            if (dicE.Key == "全部")
+            if (comboBoxItem1.SelectedItem == null)
             {
                 bindingSource1.Filter = "";
+                return;
+            }
+            DictionaryEntry dicE = (DictionaryEntry)comboBoxItem1.SelectedItem;
+            if (dicE.Key == "全部")
+            {
+              bindingSource1.Filter = "";
             }
             else
             {
-               FilterRow(whereType, colName, whereStr);
-               return;
-                
+                string whereType = buttonItem15.Text;
+                string colName = dicE.Value.ToString();
+                string whereStr = maskedTextBoxAdv1.Text;
+                FilterRow(whereType, colName, whereStr);
+                return;
             }
         }
 
@@ -122,22 +132,22 @@ namespace SmsTerrace.UI.UseCtrl
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
+            InitDataView();
             maskedTextBoxAdv1_TextChanged(null,null);
         }
 
         private void tToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (dataGridViewX1.SelectedRows.Count==1)
+            if (dataGridViewX1.SelectedRows.Count == 1)
             {
-                
                 ContactInfo conInfo = new ContactInfo(GetSelectRelModel());
-               conInfo.ShowDialog();
+                conInfo.ShowDialog();
             }
-            else if (dataGridViewX1.SelectedRows.Count>1)
+            else if (dataGridViewX1.SelectedRows.Count > 1)
             {
                 MessageBoxEx.Show("共选中" + dataGridViewX1.SelectedRows.Count + "个联系人！");
             }
-         
+
         }
 
         private HzTerrace.Model.relation GetSelectRelModel()

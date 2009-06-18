@@ -56,8 +56,6 @@
             this.ribbonPanel2 = new DevComponents.DotNetBar.RibbonPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.itemContainer6 = new DevComponents.DotNetBar.ItemContainer();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
@@ -388,9 +386,6 @@
             this.dataGridViewX1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewX1.BackgroundColor = System.Drawing.Color.LightSkyBlue;
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -406,17 +401,6 @@
             this.dataGridViewX1.RowTemplate.Height = 23;
             this.dataGridViewX1.Size = new System.Drawing.Size(574, 154);
             this.dataGridViewX1.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
             // 
             // buttonX1
             // 
@@ -862,7 +846,5 @@
         private DevComponents.DotNetBar.ButtonItem buttonItem14;
         private DevComponents.DotNetBar.ButtonItem buttonItem15;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
