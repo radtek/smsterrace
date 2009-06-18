@@ -35,7 +35,7 @@ namespace SmsTerrace
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new SmsFrm());
+          //  Application.Run(new SmsFrm());
             Application.Run(new Form1());
         }
 

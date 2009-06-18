@@ -77,10 +77,10 @@ namespace HzTerrace.DAL
 		public void Update(HzTerrace.Model.relation model)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("update relation set ");
+			strSql.Append("update [relation] set ");
 		
 			strSql.Append("pertainUser=@pertainUser,");
-			strSql.Append("name=@name,");
+			strSql.Append("[name]=@name,");
 			strSql.Append("sex=@sex,");
 			strSql.Append("phone1=@phone1,");
 			strSql.Append("phone2=@phone2,");
@@ -88,12 +88,12 @@ namespace HzTerrace.DAL
 			strSql.Append("company=@company,");
 			strSql.Append("email=@email,");
 			strSql.Append("address=@address,");
-			strSql.Append("group=@group,");
-			strSql.Append("status=@status,");
+			strSql.Append("[group]=@group,");
+			strSql.Append("[status]=@status,");
 			strSql.Append("remark=@remark");
-			strSql.Append(" where id=@id ");
+			strSql.Append(" where [id]=@id ");
 			OleDbParameter[] parameters = {
-					new OleDbParameter("@id", OleDbType.Integer,4),
+				
 					new OleDbParameter("@pertainUser", OleDbType.Integer,4),
 					new OleDbParameter("@name", OleDbType.VarChar,50),
 					new OleDbParameter("@sex", OleDbType.Boolean,2),
@@ -105,20 +105,23 @@ namespace HzTerrace.DAL
 					new OleDbParameter("@address", OleDbType.VarChar,50),
 					new OleDbParameter("@group", OleDbType.Integer,4),
 					new OleDbParameter("@status", OleDbType.Integer,4),
-					new OleDbParameter("@remark", OleDbType.VarChar,0)};
-			parameters[0].Value = model.id;
-			parameters[1].Value = model.pertainUser;
-			parameters[2].Value = model.name;
-			parameters[3].Value = model.sex;
-			parameters[4].Value = model.phone1;
-			parameters[5].Value = model.phone2;
-			parameters[6].Value = model.birthday;
-			parameters[7].Value = model.company;
-			parameters[8].Value = model.email;
-			parameters[9].Value = model.address;
-			parameters[10].Value = model.group;
-			parameters[11].Value = model.status;
-			parameters[12].Value = model.remark;
+					new OleDbParameter("@remark", OleDbType.VarChar,0),
+                    new OleDbParameter("@id", OleDbType.Integer,4)
+            };
+            int i = 0;
+            parameters[i++].Value = model.pertainUser;
+            parameters[i++].Value = model.name;
+            parameters[i++].Value = model.sex;
+            parameters[i++].Value = model.phone1;
+            parameters[i++].Value = model.phone2;
+            parameters[i++].Value = model.birthday;
+            parameters[i++].Value = model.company;
+            parameters[i++].Value = model.email;
+            parameters[i++].Value = model.address;
+            parameters[i++].Value = model.group;
+            parameters[i++].Value = model.status;
+            parameters[i++].Value = model.remark;
+            parameters[i++].Value = model.id;
 
 			DbHelperOleDb.ExecuteSql(strSql.ToString(),parameters);
 		}

@@ -13,6 +13,7 @@ namespace SmsTerrace.UI.UseCtrl
     public partial class ContactInfo : Office2007RibbonForm
     {
         public  HzTerrace.BLL.relation relBLL = new HzTerrace.BLL.relation();
+        public HzTerrace.BLL.extendInfo extBLL = new HzTerrace.BLL.extendInfo();
         HzTerrace.Model.relation nowRel;
         public bool isAdd=true;
         public ContactInfo()
@@ -38,7 +39,29 @@ namespace SmsTerrace.UI.UseCtrl
             if (!isAdd)
             {
                 SetNowRelation();
+                InitExtView();
+                
+            }    
+        }
+
+        private void InitExtView()
+        {
+            dataGridViewX1.DataSource = extBLL.GetExtendInfo(nowRel.id.Value);
+            foreach (DataGridViewColumn item in dataGridViewX1.Columns)
+            {
+                item.Visible = false;
             }
+            // 
+            // Column1
+            // 
+            dataGridViewX1.Columns["name"].FillWeight = 30F;
+            dataGridViewX1.Columns["name"].HeaderText = "名称";
+            dataGridViewX1.Columns["name"].Visible = true;
+            // 
+            // Column2
+            // 
+            dataGridViewX1.Columns["value"].HeaderText = "值";
+            dataGridViewX1.Columns["value"].Visible = true;
         }
 
         private void SetNowRelation()
@@ -68,6 +91,7 @@ namespace SmsTerrace.UI.UseCtrl
             if (isAdd)
             {
                 relBLL.Add(relModel);
+
             }
             else {
                 relBLL.Update(relModel);
@@ -87,7 +111,7 @@ namespace SmsTerrace.UI.UseCtrl
             string group = buttonX2.Text;
             string remark = textBoxX8.Text;
             HzTerrace.Model.relation relModel = new HzTerrace.Model.relation();
-
+            relModel.id = nowRel.id;
             relModel.address = address;
             relModel.birthday = contactBirthday;
             relModel.company = company;

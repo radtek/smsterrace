@@ -42,8 +42,7 @@ namespace HzTerrace.BLL
 		/// 删除一条数据
 		/// </summary>
 		public void Delete(int id)
-		{
-			
+		{		
 			dal.Delete(id);
 		}
 
@@ -55,6 +54,8 @@ namespace HzTerrace.BLL
 			
 			return dal.GetModel(id);
 		}
+
+       
 
 		/// <summary>
 		/// 得到一个对象实体，从缓存中。
@@ -102,6 +103,34 @@ namespace HzTerrace.BLL
 			DataSet ds = dal.GetList(strWhere);
 			return DataTableToList(ds.Tables[0]);
 		}
+
+        /// <summary>
+        /// 根据relationId,得到对象实体
+        /// </summary>
+        public List<HzTerrace.Model.extendInfo> GetExtendByRelId(int relId)
+        {
+            string sqlWhere = " relationId="+relId;
+            return GetModelList(sqlWhere);
+        }
+
+        /// <summary>
+        /// 根据relationId,得到分组信息
+        /// </summary>
+        public List<HzTerrace.Model.extendInfo> GetGroupInfo(int relId)
+        {
+            string sqlWhere = "sign='group_sign' and relationId=" + relId;
+            return GetModelList(sqlWhere);
+        }
+
+        /// <summary>
+        /// 根据relationId,得到自定义扩展信息
+        /// </summary>
+        public List<HzTerrace.Model.extendInfo> GetExtendInfo(int relId)
+        {
+            string sqlWhere = "(sign not like '%_sign' or sign is null) and relationId=" + relId;
+            return GetModelList(sqlWhere);
+        }
+
 		/// <summary>
 		/// 获得数据列表
 		/// </summary>
