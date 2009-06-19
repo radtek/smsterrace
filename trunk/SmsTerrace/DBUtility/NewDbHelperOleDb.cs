@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Data.OleDb;
 using System.Configuration;
+using System.Collections.Generic;
 
 namespace hz.sms.DBUtility
 {
@@ -12,8 +13,19 @@ namespace hz.sms.DBUtility
     /// 数据访问基础类(基于OleDb)
     /// 可以用户可以修改满足自己项目的需要。
     /// </summary>
-    public  class NewDbHelperOleDb
+    public  class NewDbHelperOleDb:IDisposable
     {
+        static Dictionary<string, NewDbHelperOleDb> dic = new Dictionary<string, NewDbHelperOleDb>();
+        public static NewDbHelperOleDb GetDbByRecord(string dbName)
+        {
+           return  dic[dbName];
+        }
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+        }
         //数据库连接字符串(web.config来配置)
         //<add key="ConnectionString" value="server=127.0.0.1;database=DATABASE;uid=sa;pwd=" />		
         private string connectionString;//= ConfigurationManager.ConnectionStrings["MSSQL"].ConnectionString;
@@ -23,6 +35,18 @@ namespace hz.sms.DBUtility
         }
       public  NewDbHelperOleDb()
         {
+        }
+
+        public NewDbHelperOleDb(string connectionString,string dbName)
+        {
+            dic.Add(dbName,this);
+            this.name = dbName;
+            this.connectionString = connectionString;
+        }
+
+        public void Dispose()
+        {
+            dic.Remove(name);
         }
 
         public string ConnectionString
@@ -562,6 +586,9 @@ namespace hz.sms.DBUtility
         }
 
         #endregion
+
+
+
 
     }
 }

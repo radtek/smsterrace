@@ -78,6 +78,7 @@
     <Compile Include="DBUtility\DataBase.cs" />
     <Compile Include="DBUtility\DbHelperOleDb.cs" />
     <Compile Include="DBUtility\DbHelperSQL.cs" />
+    <Compile Include="DBUtility\HiveOleDb.cs" />
     <Compile Include="DBUtility\NewDbHelperOleDb.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -279,10 +279,9 @@ namespace hz.sms.DBUtility
                             OleDbParameter[] cmdParms = (OleDbParameter[])myDE.Value;
                             PrepareCommand(cmd, conn, trans, cmdText, cmdParms);
                             int val = cmd.ExecuteNonQuery();
-                            cmd.Parameters.Clear();
-
-                            trans.Commit();
-                        }
+                            cmd.Parameters.Clear();   
+                        } 
+                        trans.Commit();
                     }
                     catch
                     {

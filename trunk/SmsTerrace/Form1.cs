@@ -127,6 +127,13 @@ namespace SmsTerrace
             buttonX2.Expanded = false;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            hz.sms.DBUtility.NewDbHelperOleDb db=  new hz.sms.DBUtility.NewDbHelperOleDb("","no1");
+            hz.sms.DBUtility.HiveOleDb db2=new hz.sms.DBUtility.HiveOleDb("dddd","no1");
+            MessageBox.Show(hz.sms.DBUtility.NewDbHelperOleDb.GetDbByRecord("no2").ConnectionString);
+        }
+
 
     }
 }
