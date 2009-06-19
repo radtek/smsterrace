@@ -129,6 +129,12 @@ namespace SmsTerrace.UI.UseCtrl
         private void buttonItem1_Click(object sender, EventArgs e)
         {
             HzTerrace.Model.relation relModel = GetNowRelation();
+            //extBLL.Add();
+            HzTerrace.Model.extendInfo extM = new HzTerrace.Model.extendInfo();
+            extM.name = "";
+            extM.value = "";
+            extM.sign = "group_sign";
+            extM.relationId = 1;
             if (isAdd)
             {
                 relBLL.Add(relModel);

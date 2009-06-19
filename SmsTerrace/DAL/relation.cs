@@ -4,6 +4,7 @@ using System.Text;
 using System.Data.OleDb;
 using hz.sms.DBUtility;
 using System.Collections.Generic;
+using System.Collections;
 namespace HzTerrace.DAL
 {
 	/// <summary>
@@ -69,8 +70,46 @@ namespace HzTerrace.DAL
             parameters[i++].Value = model.status;
             parameters[i++].Value = model.remark;
 
-			DbHelperOleDb.ExecuteSql(strSql.ToString(),parameters);
+            DbHelperOleDb.ExecuteSql(strSql.ToString(), parameters);//@@IDENTITY 
 		}
+
+        public void AddAndReId(HzTerrace.Model.relation model)
+        {
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("insert into relation(");
+            strSql.Append("pertainUser,[name],sex,phone1,phone2,[birthday],[company],[email],[address],[group],[status],[remark])");
+            strSql.Append(" values (");
+            strSql.Append("@pertainUser,@name,@sex,@phone1,@phone2,@birthday,@company,@email,@address,@group,@status,@remark)");
+            OleDbParameter[] parameters = {
+					
+					new OleDbParameter("@pertainUser", OleDbType.Integer,4),
+					new OleDbParameter("@name", OleDbType.VarChar,50),
+					new OleDbParameter("@sex", OleDbType.Boolean,2),
+					new OleDbParameter("@phone1", OleDbType.VarChar,50),
+					new OleDbParameter("@phone2", OleDbType.VarChar,50),
+					new OleDbParameter("@birthday", OleDbType.Date),
+					new OleDbParameter("@company", OleDbType.VarChar,50),
+					new OleDbParameter("@email", OleDbType.VarChar,50),
+					new OleDbParameter("@address", OleDbType.VarChar,50),
+					new OleDbParameter("@group", OleDbType.Integer,4),
+					new OleDbParameter("@status", OleDbType.Integer,4),
+					new OleDbParameter("@remark", OleDbType.VarChar,0)};
+            int i = 0;
+            parameters[i++].Value = model.pertainUser;
+            parameters[i++].Value = model.name;
+            parameters[i++].Value = model.sex;
+            parameters[i++].Value = model.phone1;
+            parameters[i++].Value = model.phone2;
+            parameters[i++].Value = model.birthday;
+            parameters[i++].Value = model.company;
+            parameters[i++].Value = model.email;
+            parameters[i++].Value = model.address;
+            parameters[i++].Value = model.group;
+            parameters[i++].Value = model.status;
+            parameters[i++].Value = model.remark;
+ 
+            DbHelperOleDb.ExecuteSql(strSql.ToString(), parameters);//@@IDENTITY 
+        }
 		/// <summary>
 		/// 更新一条数据
 		/// </summary>
