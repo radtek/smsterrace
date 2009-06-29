@@ -39,14 +39,23 @@ namespace SmsTerrace.UI.UseCtrl
             if (!isAdd)
             {
                 SetNowRelation();
-                InitExtView();
-                
+                InitExtView();              
             }    
         }
 
         private void InitExtView()
         {
             dataGridViewX1.DataSource = extBLL.GetExtendInfo(nowRel.id.Value);
+           List<HzTerrace.Model.extendInfo> groupList= extBLL.GetGroupInfo(nowRel.id.Value);
+           foreach (HzTerrace.Model.extendInfo item in groupList)
+            {
+                Node TempNode = new Node();
+                TempNode.Expanded = true;
+                TempNode.Name = "groupId_" + item.id;
+                TempNode.Text = item.value;
+                node3.Nodes.Add(TempNode);
+            }
+
             foreach (DataGridViewColumn item in dataGridViewX1.Columns)
             {
                 item.Visible = false;
