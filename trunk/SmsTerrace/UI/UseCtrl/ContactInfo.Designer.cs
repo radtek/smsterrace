@@ -503,6 +503,7 @@
             // 
             // node4
             // 
+            this.node4.Expanded = true;
             this.node4.Name = "node4";
             this.node4.Text = "亲友";
             // 
