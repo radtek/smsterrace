@@ -54,13 +54,13 @@
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewX1 = new DevComponents.DotNetBar.Controls.DataGridViewX();
-            this.号码 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除选中行ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.全选ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.验证号码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除错误号码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -113,6 +113,7 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.AutoScrollMinSize = new System.Drawing.Size(0, 180);
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -126,8 +127,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 190F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 192);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 194);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlAdded);
             this.tableLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlRemoved);
@@ -304,8 +305,6 @@
             // dataGridViewX1
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewX1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.号码});
             this.dataGridViewX1.ContextMenuStrip = this.contextMenuStrip1;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -325,11 +324,6 @@
             this.dataGridViewX1.Size = new System.Drawing.Size(104, 532);
             this.dataGridViewX1.TabIndex = 18;
             this.dataGridViewX1.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewX1_CellValidated);
-            // 
-            // 号码
-            // 
-            this.号码.HeaderText = "号码";
-            this.号码.Name = "号码";
             // 
             // contextMenuStrip1
             // 
@@ -376,6 +370,11 @@
             this.删除错误号码ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.删除错误号码ToolStripMenuItem.Text = "删除错误号码";
             this.删除错误号码ToolStripMenuItem.Click += new System.EventHandler(this.删除错误号码ToolStripMenuItem_Click);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
             // MmsCreate
             // 
@@ -439,12 +438,12 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.Label label1;
         private DevComponents.DotNetBar.Controls.DataGridViewX dataGridViewX1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 号码;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 删除选中行ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 全选ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 验证号码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除错误号码ToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

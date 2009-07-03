@@ -49,3 +49,4 @@ D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.DeriveFrm.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.AddressBook.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.ContactInfo.resources
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.FirstFrm.resources

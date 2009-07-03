@@ -12,6 +12,7 @@ using SmsTerrace.UI;
 using SmsTerrace.BLL;
 using hz.BLL.mms;
 using System.Text.RegularExpressions;
+using DevComponents.DotNetBar.Controls;
 namespace HzTerrace.UI
 {
     public partial class MmsCreate : UserControl
@@ -19,6 +20,9 @@ namespace HzTerrace.UI
         public MmsCreate()
         {
             InitializeComponent();
+            DataTable idt=new DataTable();
+            idt.Columns.Add("号码");
+            dataGridViewX1.DataSource = idt;
         }
 
         List<FrameShow> mmsfArray = new List<FrameShow>();
@@ -278,22 +282,49 @@ namespace HzTerrace.UI
         string phoneNums = "";
         void deriveFrm_SelectEnd(object sender, DoWorkEventArgs e)
         {
-
+            
             DeriveFrm df = sender as DeriveFrm;
             DataTable dt = e.Argument as DataTable;
             df.Close();
-            phoneNums = "";
+            object[] objs = new object[] { dt,dataGridViewX1};
+            backgroundWorker2.RunWorkerAsync(objs);
+           
+        }
+    
+        private void CheckNumAtDt(DataTable dt, DataGridViewX dgvX1)
+        {
+            StringBuilder  phoneNumsBuilder = new StringBuilder();
+           
             int i = 0;
+            int indexNew = 0;
+            dt.Columns[0].ColumnName = "号码";
+            DataTable sourceDt = dgvX1.DataSource as DataTable;
+            if (sourceDt == null)
+            {
+               
+                dgvX1.DataSource = dt;
+            }
+            else
+            {
+                indexNew = sourceDt.Rows.Count;
+                sourceDt.Merge(dt);
+                dgvX1.DataSource = sourceDt;
+            }
+
+            dgvX1.SuspendLayout();
             foreach (DataRow row in dt.Rows)
             {
                 i++;
-                phoneNums += (row[0].ToString() + ",");
-              int newRow=  dataGridViewX1.Rows.Add(row.ItemArray[0]);
-              if (PhoneNumValidate(row.ItemArray[0] as string) < 1)
-                  dataGridViewX1[0, newRow].Style.BackColor = Color.LightCoral;
-            }
+                phoneNumsBuilder.Append(row[0].ToString());
+                phoneNumsBuilder.Append(",");
 
-            phoneNums = phoneNums.TrimEnd(',');
+                // int newRow = dgvX1.Rows.Add(row[0]);
+
+                if (PhoneNumValidate(row[0] as string) < 1)
+                    dgvX1[0, indexNew+i].Style.BackColor = Color.LightCoral;
+            }
+            dgvX1.ResumeLayout();
+            phoneNums = phoneNumsBuilder.ToString().TrimEnd(',');
             textBoxX3.Text = "导入号码" + i;
             MessageBox.Show("已导入号码：" + i);
         }
@@ -376,6 +407,22 @@ namespace HzTerrace.UI
             {
                 dataGridViewX1.CurrentCell.Style.BackColor = System.Drawing.SystemColors.Window ;
             }
+        }
+        delegate void CheckNumAtDtDlg(DataTable dt, DataGridViewX dgvX1);
+        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            object[] eArg=(object[])e.Argument; 
+            DataTable dt = eArg[0] as DataTable;
+            DataGridViewX dgv1 = eArg[1] as DataGridViewX;
+            if (InvokeRequired)
+            {
+           dataGridViewX1.BeginInvoke(new CheckNumAtDtDlg(CheckNumAtDt), dt, dgv1);
+            }//CheckNumAtDt(dt,dgv1);
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            MessageBox.Show("end");
         }
 
     }

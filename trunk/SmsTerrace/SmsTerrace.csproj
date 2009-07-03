@@ -54,6 +54,9 @@
     <Compile Include="BLL\LogInfoManage.cs" />
     <Compile Include="BLL\MmsManage.cs" />
     <Compile Include="BLL\relation.cs" />
+    <Compile Include="Class1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comm\ConfigHelper.cs" />
     <Compile Include="Comm\DataCache.cs" />
     <Compile Include="BLL\SmsOperate.cs" />
@@ -117,6 +120,10 @@
     <EmbeddedResource Include="UI\DeriveFrm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>DeriveFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FirstFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FirstFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FrameShow.resx">
       <DependentUpon>FrameShow.cs</DependentUpon>
@@ -195,6 +202,12 @@
     </Compile>
     <Compile Include="UI\DeriveFrm.Designer.cs">
       <DependentUpon>DeriveFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FirstFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FirstFrm.Designer.cs">
+      <DependentUpon>FirstFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\FrameShow.cs">
       <SubType>UserControl</SubType>

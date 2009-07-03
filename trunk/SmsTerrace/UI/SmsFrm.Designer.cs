@@ -217,9 +217,9 @@
             // ribbonControl1
             // 
             this.ribbonControl1.CaptionVisible = true;
+            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel1);
             this.ribbonControl1.Controls.Add(this.ribbonPanel5);
-            this.ribbonControl1.Controls.Add(this.ribbonPanel6);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -256,6 +256,7 @@
             this.ribbonPanel1.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel1.Size = new System.Drawing.Size(792, 540);
             this.ribbonPanel1.TabIndex = 1;
+            this.ribbonPanel1.Visible = false;
             this.ribbonPanel1.EnabledChanged += new System.EventHandler(this.ribbonPanel1_EnabledChanged);
             // 
             // panelEx1
@@ -1010,7 +1011,6 @@
             this.ribbonPanel6.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.ribbonPanel6.Size = new System.Drawing.Size(792, 540);
             this.ribbonPanel6.TabIndex = 5;
-            this.ribbonPanel6.Visible = false;
             // 
             // ribbonPanel4
             // 
@@ -1500,7 +1500,6 @@
             // 
             // ribbonTabItem1
             // 
-            this.ribbonTabItem1.Checked = true;
             this.ribbonTabItem1.ImagePaddingHorizontal = 8;
             this.ribbonTabItem1.Name = "ribbonTabItem1";
             this.ribbonTabItem1.Panel = this.ribbonPanel1;
@@ -1524,6 +1523,7 @@
             // 
             // ribbonTabItem6
             // 
+            this.ribbonTabItem6.Checked = true;
             this.ribbonTabItem6.ImagePaddingHorizontal = 8;
             this.ribbonTabItem6.Name = "ribbonTabItem6";
             this.ribbonTabItem6.Panel = this.ribbonPanel6;
