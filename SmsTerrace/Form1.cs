@@ -134,6 +134,12 @@ namespace SmsTerrace
             MessageBox.Show(hz.sms.DBUtility.NewDbHelperOleDb.GetDbByRecord("no2").ConnectionString);
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            SmsTerrace.UI.FirstFrm f1 = new SmsTerrace.UI.FirstFrm();
+            f1.Show();   
+        }
+
 
     }
 }

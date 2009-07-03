@@ -35,8 +35,8 @@ namespace SmsTerrace
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          //  Application.Run(new SmsFrm());
-            Application.Run(new Form1());
+          // Application.Run(new SmsFrm());
+            Application.Run(new FirstFrm());
         }
 
         [DllImport("user32.dll", EntryPoint = "ShowWindow", SetLastError = true)]
