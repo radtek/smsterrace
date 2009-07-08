@@ -1141,16 +1141,16 @@
   </wsdl:binding>
   <wsdl:service name="Service">
     <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
-      <soap:address location="http://localhost:6239/WebSite/Service2.asmx" />
+      <soap:address location="http://www.wi-ad.com:8011/hzwebser/Service2.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
-      <soap12:address location="http://localhost:6239/WebSite/Service2.asmx" />
+      <soap12:address location="http://www.wi-ad.com:8011/hzwebser/Service2.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
-      <http:address location="http://localhost:6239/WebSite/Service2.asmx" />
+      <http:address location="http://www.wi-ad.com:8011/hzwebser/Service2.asmx" />
     </wsdl:port>
     <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
-      <http:address location="http://localhost:6239/WebSite/Service2.asmx" />
+      <http:address location="http://www.wi-ad.com:8011/hzwebser/Service2.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

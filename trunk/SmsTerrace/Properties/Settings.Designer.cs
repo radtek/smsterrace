@@ -26,7 +26,7 @@ namespace SmsTerrace.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:6239/WebSite/Service2.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wi-ad.com:8011/hzwebser/Service2.asmx")]
         public string SmsTerrace_SmsWebService_Service {
             get {
                 return ((string)(this["SmsTerrace_SmsWebService_Service"]));
@@ -36,7 +36,7 @@ namespace SmsTerrace.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:6239/WebSite/ClientServer.asmx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx")]
         public string SmsTerrace_ClientWebServer_ClientServer {
             get {
                 return ((string)(this["SmsTerrace_ClientWebServer_ClientServer"]));

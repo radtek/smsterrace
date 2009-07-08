@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="SmsTerrace_SmsWebService_Service" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:6239/WebSite/Service2.asmx</Value>
+      <Value Profile="(Default)">http://www.wi-ad.com:8011/hzwebser/Service2.asmx</Value>
     </Setting>
     <Setting Name="SmsTerrace_ClientWebServer_ClientServer" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://localhost:6239/WebSite/ClientServer.asmx</Value>
+      <Value Profile="(Default)">http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

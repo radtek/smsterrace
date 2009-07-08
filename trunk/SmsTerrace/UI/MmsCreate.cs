@@ -17,14 +17,32 @@ namespace HzTerrace.UI
 {
     public partial class MmsCreate : UserControl
     {
+        string mmsUserId;
+        string mmsPwd ;
+        int mmsBid ;
         public MmsCreate()
         {
             InitializeComponent();
             DataTable idt=new DataTable();
             idt.Columns.Add("号码");
             dataGridViewX1.DataSource = idt;
-        }
 
+        }
+       bool  loginInfoInit()
+        {
+            try
+            {
+                mmsUserId = SmsFrm.userName;
+                mmsPwd = SmsFrm.userPwd;
+                mmsBid = int.Parse(SmsFrm.userExCode);
+                return true;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("彩信发送账号信息不正确！");
+                return false;
+            }
+        }
         List<FrameShow> mmsfArray = new List<FrameShow>();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -129,12 +147,17 @@ namespace HzTerrace.UI
                 MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (InitInfo.MMS_MAX_SIZE / 1024) + "KB");
                 return;
             }
-
-            if (textBoxX1.Text.Trim().Length < 1 || textBoxX2.Text.Trim().Length < 1 || integerInput1.Value < 1)
+            else if (totalSize<1)
             {
-                MessageBox.Show("发送参数不正确！");
+                MessageBox.Show("不可发送空彩信！");
                 return;
             }
+
+            //if (textBoxX1.Text.Trim().Length < 1 || textBoxX2.Text.Trim().Length < 1 || integerInput1.Value < 1)
+            //{
+            //    MessageBox.Show("发送参数不正确！");
+            //    return;
+            //}
             //if (phoneNums.Trim().TrimEnd(',').Length < 1)
             //{
             //    MessageBox.Show("没有可发送号码，请确认号码导入正确");
@@ -222,12 +245,17 @@ namespace HzTerrace.UI
 
                 string ph = sbu.ToString().TrimEnd(',');
                 phoneNums = ph;
+                if (ph.Length < 1)
+                {
+                    MessageBox.Show("号码不可为空！");
+                    return;
+                }
                 dic = mmsManage.MmsXmlToDic(textBoxX4.Text, ph, dic);
                 byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
                 SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
-                string mmsUserId = textBoxX1.Text;
-                string mmsPwd = textBoxX2.Text;
-                int mmsBid = integerInput1.Value;
+
+                if (!loginInfoInit())
+                    return;
                 int sr = r.Next(99999);
 
                
@@ -314,7 +342,7 @@ namespace HzTerrace.UI
             dgvX1.SuspendLayout();
             foreach (DataRow row in dt.Rows)
             {
-                i++;
+                
                 phoneNumsBuilder.Append(row[0].ToString());
                 phoneNumsBuilder.Append(",");
 
@@ -322,6 +350,7 @@ namespace HzTerrace.UI
 
                 if (PhoneNumValidate(row[0] as string) < 1)
                     dgvX1[0, indexNew+i].Style.BackColor = Color.LightCoral;
+                i++;
             }
             dgvX1.ResumeLayout();
             phoneNums = phoneNumsBuilder.ToString().TrimEnd(',');
@@ -332,7 +361,7 @@ namespace HzTerrace.UI
 
         public int PhoneNumValidate(string phoneNum)
         {
-            if (Regex.IsMatch(phoneNum, @"^(0\d{9,11})|(1\d{10})$"))
+            if (Regex.IsMatch(phoneNum, @"^((0\d{9,11})|(1\d{10}))$"))
             {
                 return 1;
             }
@@ -422,7 +451,7 @@ namespace HzTerrace.UI
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("end");
+            
         }
 
     }

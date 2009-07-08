@@ -5,11 +5,11 @@
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{CD78865E-0AAE-49CE-B252-E1D4B901CAC2}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SmsTerrace</RootNamespace>
     <AssemblyName>SmsTerrace</AssemblyName>
-    <ApplicationIcon>6_1237624969.ico</ApplicationIcon>
+    <ApplicationIcon>ico 01.ico</ApplicationIcon>
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
@@ -57,6 +57,7 @@
     <Compile Include="Class1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Class2.cs" />
     <Compile Include="Comm\ConfigHelper.cs" />
     <Compile Include="Comm\DataCache.cs" />
     <Compile Include="BLL\SmsOperate.cs" />
@@ -307,10 +308,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:6239/WebSite/ClientServer.asmx">
+    <WebReferenceUrl Include="http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\ClientWebServer\</RelPath>
-      <UpdateFromURL>http://localhost:6239/WebSite/ClientServer.asmx</UpdateFromURL>
+      <UpdateFromURL>http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -318,10 +319,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>SmsTerrace_ClientWebServer_ClientServer</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:6239/WebSite/Service2.asmx">
+    <WebReferenceUrl Include="http://www.wi-ad.com:8011/hzwebser/Service2.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\SmsWebService\</RelPath>
-      <UpdateFromURL>http://localhost:6239/WebSite/Service2.asmx</UpdateFromURL>
+      <UpdateFromURL>http://www.wi-ad.com:8011/hzwebser/Service2.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

@@ -183,16 +183,16 @@
   </wsdl:binding>
   <wsdl:service name="ClientServer">
     <wsdl:port name="ClientServerSoap" binding="tns:ClientServerSoap">
-      <soap:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+      <soap:address location="http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx" />
     </wsdl:port>
     <wsdl:port name="ClientServerSoap12" binding="tns:ClientServerSoap12">
-      <soap12:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+      <soap12:address location="http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx" />
     </wsdl:port>
     <wsdl:port name="ClientServerHttpGet" binding="tns:ClientServerHttpGet">
-      <http:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+      <http:address location="http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx" />
     </wsdl:port>
     <wsdl:port name="ClientServerHttpPost" binding="tns:ClientServerHttpPost">
-      <http:address location="http://localhost:6239/WebSite/ClientServer.asmx" />
+      <http:address location="http://www.wi-ad.com:8011/hzwebser/ClientServer.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
