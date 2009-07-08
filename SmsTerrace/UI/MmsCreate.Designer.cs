@@ -127,8 +127,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 194);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 195);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlAdded);
             this.tableLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlRemoved);
@@ -203,6 +203,7 @@
             this.integerInput1.Name = "integerInput1";
             this.integerInput1.Size = new System.Drawing.Size(33, 21);
             this.integerInput1.TabIndex = 13;
+            this.integerInput1.Visible = false;
             // 
             // textBoxX1
             // 
@@ -214,6 +215,7 @@
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.Size = new System.Drawing.Size(90, 21);
             this.textBoxX1.TabIndex = 14;
+            this.textBoxX1.Visible = false;
             // 
             // labelX1
             // 
@@ -222,6 +224,7 @@
             this.labelX1.Size = new System.Drawing.Size(142, 23);
             this.labelX1.TabIndex = 15;
             this.labelX1.Text = "MMS专用设置：   账号：";
+            this.labelX1.Visible = false;
             // 
             // textBoxX2
             // 
@@ -233,6 +236,7 @@
             this.textBoxX2.Name = "textBoxX2";
             this.textBoxX2.Size = new System.Drawing.Size(90, 21);
             this.textBoxX2.TabIndex = 14;
+            this.textBoxX2.Visible = false;
             // 
             // labelX2
             // 
@@ -241,6 +245,7 @@
             this.labelX2.Size = new System.Drawing.Size(45, 23);
             this.labelX2.TabIndex = 15;
             this.labelX2.Text = "密码：";
+            this.labelX2.Visible = false;
             // 
             // labelX3
             // 
@@ -249,6 +254,7 @@
             this.labelX3.Size = new System.Drawing.Size(57, 23);
             this.labelX3.TabIndex = 15;
             this.labelX3.Text = "业务代码";
+            this.labelX3.Visible = false;
             // 
             // button7
             // 
@@ -296,7 +302,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(132, 60);
+            this.label1.Location = new System.Drawing.Point(132, 42);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(469, 14);
             this.label1.TabIndex = 17;

@@ -195,6 +195,7 @@
             this.Name = "UserLogin";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "1.1b";
             this.ribbonClientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

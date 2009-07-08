@@ -21,9 +21,7 @@ D:\My Documents\Visual Studio 2005\Projects\MainService\BgProcess\bin\Debug\DevC
 D:\My Documents\Visual Studio 2005\Projects\MainService\BgProcess\obj\Debug\hz.Processor.FrameShow.resources
 D:\My Documents\Visual Studio 2005\Projects\MainService\BgProcess\obj\Debug\hz.Processor.Form2.resources
 D:\My Documents\Visual Studio 2005\Projects\MainService\BgProcess\obj\Debug\hz.Processor.MmsCreate.resources
-D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\BgProcess.exe
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\BgProcess.pdb
-D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\bin\Debug\BgProcess.exe
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\bin\Debug\BgProcess.pdb
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\bin\Debug\DevComponents.DotNetBar2.dll
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\bin\Debug\ICSharpCode.SharpZipLib.dll
@@ -35,3 +33,5 @@ D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\hz.Processor.MmsCreate.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\hz.Processor.Properties.Resources.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\BgProcess.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\bin\Debug\BgProcess.dll
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\BgProcess\obj\Debug\BgProcess.dll

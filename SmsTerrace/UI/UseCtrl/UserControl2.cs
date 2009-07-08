@@ -18,18 +18,38 @@ namespace SmsTerrace.UI.UseCtrl
 
         private void buttonX1_Click(object sender, EventArgs e)
         {
-            SmsWebServiceMirror sm = new SmsWebServiceMirror();
-            SmsWebService.GetBalanceResp resp = sm.GetBalance(SmsFrm.userName, SmsFrm.userPwd, SmsFrm.userExCode);
-            string str = resp.ErrorDesc + "\n剩余条数:" + resp.Balance;
-            MessageBox.Show(str);
+            try
+            {
+                SmsWebServiceMirror sm = new SmsWebServiceMirror();
+                SmsWebService.GetBalanceResp resp = sm.GetBalance(SmsFrm.userName, SmsFrm.userPwd, SmsFrm.userExCode);
+                string str = resp.ErrorDesc + "\n剩余条数:" + resp.Balance;
+                MessageBox.Show(str);
+            }catch(System.Net.WebException ex){
+                MessageBox.Show("连接服务器失败");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("信息获取错误!");
+            }
         }
 
         private void buttonX2_Click(object sender, EventArgs e)
         {
-            SmsWebServiceMirror sm = new SmsWebServiceMirror();
-            SmsWebService.GetSmsResultResp resp = sm.GetSmsResult(SmsFrm.userName, SmsFrm.userPwd, SmsFrm.userExCode);
-            string str = resp.ErrorDesc.ToString();
-            MessageBox.Show(str);
+            try
+            {
+                SmsWebServiceMirror sm = new SmsWebServiceMirror();
+                SmsWebService.GetSmsResultResp resp = sm.GetSmsResult(SmsFrm.userName, SmsFrm.userPwd, SmsFrm.userExCode);
+                string str = resp.ErrorDesc.ToString();
+                MessageBox.Show(str);
+            }
+            catch (System.Net.WebException ex)
+            {
+                MessageBox.Show("连接服务器失败");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("信息获取错误!");
+            }
         }
 
         private void buttonX3_Click(object sender, EventArgs e)
@@ -40,10 +60,18 @@ namespace SmsTerrace.UI.UseCtrl
             }
             if (textBoxX2.Text.Length>6&&textBoxX2.Text.Equals(textBoxX3.Text))
             {
-                SmsWebServiceMirror sm = new SmsWebServiceMirror();
-                SmsWebService.SetPasswordResp resp = sm.SetPassword(SmsFrm.userName, SmsFrm.userPwd, textBoxX2.Text);
-                string str = resp.ErrorDesc.ToString();
-                MessageBox.Show(str);
+                try
+                {
+                    SmsWebServiceMirror sm = new SmsWebServiceMirror();
+                    SmsWebService.SetPasswordResp resp = sm.SetPassword(SmsFrm.userName, SmsFrm.userPwd, textBoxX2.Text);
+                    string str = resp.ErrorDesc.ToString();
+                    MessageBox.Show(str);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("执行失败！");
+                    
+                }
             }else if (textBoxX2.Text.Length<6)
             {
                 MessageBox.Show("密码不可小于6位");
