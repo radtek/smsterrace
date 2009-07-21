@@ -26,8 +26,9 @@ namespace HzTerrace.UI
             DataTable idt=new DataTable();
             idt.Columns.Add("号码");
             dataGridViewX1.DataSource = idt;
-
+            dateTimeInput1.Value = DateTime.Now.AddHours(2);
         }
+
        bool  loginInfoInit()
         {
             try
@@ -43,6 +44,7 @@ namespace HzTerrace.UI
                 return false;
             }
         }
+
         List<FrameShow> mmsfArray = new List<FrameShow>();
         private void button1_Click(object sender, EventArgs e)
         {
@@ -250,7 +252,18 @@ namespace HzTerrace.UI
                     MessageBox.Show("号码不可为空！");
                     return;
                 }
-                dic = mmsManage.MmsXmlToDic(textBoxX4.Text, ph, dic);
+
+                string titleAndDesc = textBoxX4.Text;
+                //如果选择了定时，将定时发送时间添加进去
+                if (dateTimeInput1.LockUpdateChecked)
+                {
+                    titleAndDesc+=("\r\nSendDate:"+dateTimeInput1.Value);
+                }
+                else
+                {
+                    titleAndDesc += ("\r\nSendDate: ");
+                }
+                dic = mmsManage.MmsXmlToDic(titleAndDesc, ph, dic);
                 byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
                 SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
 
