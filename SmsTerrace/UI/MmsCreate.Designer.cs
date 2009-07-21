@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,10 +61,12 @@
             this.验证号码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.删除错误号码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -127,8 +129,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 195);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 196);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlAdded);
             this.tableLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlRemoved);
@@ -312,14 +314,14 @@
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
@@ -341,31 +343,31 @@
             this.删除错误号码ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 98);
             // 
             // 删除选中行ToolStripMenuItem
             // 
             this.删除选中行ToolStripMenuItem.Name = "删除选中行ToolStripMenuItem";
-            this.删除选中行ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.删除选中行ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.删除选中行ToolStripMenuItem.Text = "删除选中行";
             this.删除选中行ToolStripMenuItem.Click += new System.EventHandler(this.删除选中行ToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(114, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(118, 6);
             // 
             // 全选ToolStripMenuItem
             // 
             this.全选ToolStripMenuItem.Name = "全选ToolStripMenuItem";
-            this.全选ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.全选ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.全选ToolStripMenuItem.Text = "全选";
             this.全选ToolStripMenuItem.Click += new System.EventHandler(this.全选ToolStripMenuItem_Click);
             // 
             // 验证号码ToolStripMenuItem
             // 
             this.验证号码ToolStripMenuItem.Name = "验证号码ToolStripMenuItem";
-            this.验证号码ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.验证号码ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.验证号码ToolStripMenuItem.Text = "验证号码";
             this.验证号码ToolStripMenuItem.Visible = false;
             this.验证号码ToolStripMenuItem.Click += new System.EventHandler(this.验证号码ToolStripMenuItem_Click);
@@ -373,7 +375,7 @@
             // 删除错误号码ToolStripMenuItem
             // 
             this.删除错误号码ToolStripMenuItem.Name = "删除错误号码ToolStripMenuItem";
-            this.删除错误号码ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.删除错误号码ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.删除错误号码ToolStripMenuItem.Text = "删除错误号码";
             this.删除错误号码ToolStripMenuItem.Click += new System.EventHandler(this.删除错误号码ToolStripMenuItem_Click);
             // 
@@ -382,11 +384,62 @@
             this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
             // 
+            // dateTimeInput1
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInput1.ButtonDropDown.Visible = true;
+            this.dateTimeInput1.CustomFormat = "yyyy-MM-dd HH:mm";
+            this.dateTimeInput1.FocusHighlightColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dateTimeInput1.FocusHighlightEnabled = true;
+            this.dateTimeInput1.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dateTimeInput1.Location = new System.Drawing.Point(564, 95);
+            this.dateTimeInput1.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dateTimeInput1.MinDate = new System.DateTime(2009, 7, 20, 0, 0, 0, 0);
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2009, 7, 1, 0, 0, 0, 0);
+            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInput1.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
+            this.dateTimeInput1.Name = "dateTimeInput1";
+            this.dateTimeInput1.ShowCheckBox = true;
+            this.dateTimeInput1.ShowUpDown = true;
+            this.dateTimeInput1.Size = new System.Drawing.Size(201, 21);
+            this.dateTimeInput1.TabIndex = 19;
+            this.dateTimeInput1.Value = new System.DateTime(2009, 7, 20, 0, 0, 0, 0);
+            // 
             // MmsCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.dateTimeInput1);
             this.Controls.Add(this.dataGridViewX1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -413,6 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +505,6 @@
         private System.Windows.Forms.ToolStripMenuItem 验证号码ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 删除错误号码ToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
     }
 }
