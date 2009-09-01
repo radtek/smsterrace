@@ -160,7 +160,7 @@ namespace HzTerrace.UI
             // textLabelx.Name = "labelX2";
             textLabelx.Size = new System.Drawing.Size(124, 85);
             textLabelx.Click += new EventHandler(imgLabelx_Click);
-            textLabelx.Text = System.IO.File.ReadAllText(textPath);
+            textLabelx.Text = System.IO.File.ReadAllText(textPath, Encoding.Default);
             textLabelx.WordWrap = true;
             return textLabelx;
         }

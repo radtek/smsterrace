@@ -140,6 +140,23 @@ namespace SmsTerrace
             f1.Show();   
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            hz.Comm.zip.ZipFile zf = new hz.Comm.zip.ZipFile();
+           // zf.UnZip("f:/z.zip","f:/d/");
+            Dictionary<string, byte[]> dic = zf.UnZip("F:/z.zip");
+            string s = "";
+            foreach (KeyValuePair<string, byte[]> item in dic)
+            {
+                s += item.Key + "---" + item.Value.Length + "\n";
+                FileStream streamWriter = File.Create("F:/z/" + item.Key);
+                streamWriter.Write(item.Value, 0, item.Value.Length);
+                streamWriter.Close();
+
+            }
+            MessageBox.Show(s);
+        }
+
 
     }
 }
