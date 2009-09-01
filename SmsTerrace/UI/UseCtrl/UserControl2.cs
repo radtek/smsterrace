@@ -96,5 +96,11 @@ namespace SmsTerrace.UI.UseCtrl
             dal.DeleteALL();
             MessageBox.Show("OK");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+        }
     }
 }

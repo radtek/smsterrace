@@ -100,6 +100,118 @@ namespace hz.Comm.zip
             }
         }
 
+      /// <summary>解压
+      /// 
+      /// </summary>
+      /// <param name="sourceFile"></param>
+      /// <param name="destinationFile"></param>
+      /// <returns></returns>
+        public bool UnZip(string sourceFile, string destinationFile)
+        {
+            bool ret = true;
+            try
+            {
+                using (ZipInputStream s = new ZipInputStream(File.OpenRead(sourceFile)))
+                {
+                    ZipEntry theEntry;
+                    while ((theEntry = s.GetNextEntry()) != null)
+                    {
+                        string directoryName = Path.GetDirectoryName(destinationFile);
+                        string fileName = Path.GetFileName(theEntry.Name);
+
+                        if (fileName != String.Empty)
+                        {
+                            //如果文件的压缩后大小为0那么说明这个文件是空的,因此不需要进行读出写入
+                            if (theEntry.CompressedSize == 0)
+                                break;
+                            //解压文件到指定的目录
+                            directoryName = Path.GetDirectoryName(destinationFile + theEntry.Name);
+                            //建立下面的目录和子目录
+                            Directory.CreateDirectory(directoryName);
+
+                            using (FileStream streamWriter = File.Create(destinationFile + theEntry.Name))
+                            {
+                                int size = 2048;
+                                byte[] data = new byte[2048];
+                                while (true)
+                                {
+                                    size = s.Read(data, 0, data.Length);
+                                    if (size > 0) {
+                                        streamWriter.Write(data, 0, size);
+                                    }
+                                    else { break; }
+                                }
+                                streamWriter.Close();
+                            }
+                        }
+                    }
+                    s.Close();
+                }
+            }
+            catch (Exception )
+            {
+                ret = false;
+                throw ;
+            } 
+            return ret;
+        }
+        /// <summary>解压
+        /// 
+        /// </summary>
+        /// <param name="sourceFile"></param>
+        /// <param name="destinationFile"></param>
+        /// <returns></returns>
+        public Dictionary<string ,byte[]> UnZip(string sourceFile)
+        {
+            bool ret = true;
+            Dictionary<string, byte[]> dic = new Dictionary<string, byte[]>();
+            try
+            {
+                using (ZipInputStream s = new ZipInputStream(File.OpenRead(sourceFile)))
+                {
+                    ZipEntry theEntry;
+                    while ((theEntry = s.GetNextEntry()) != null)
+                    {
+                      //  string directoryName = Path.GetDirectoryName(destinationFile);
+                        string fileName = Path.GetFileName(theEntry.Name);
+
+                        if (fileName != String.Empty)
+                        {
+                            //如果文件的压缩后大小为0那么说明这个文件是空的,因此不需要进行读出写入
+                            if (theEntry.CompressedSize == 0)
+                                break;
+                            int size = 0;
+                            byte[] data = new byte[2048];
+                            List<byte> list = new List<byte>();
+                            int nll = 0;
+                            while (true)
+                            {
+                                size = s.Read(data, 0, data.Length);
+                                if (size > 0)
+                                {
+                                    list.AddRange(data);                                 
+                                    nll = data.Length - size;
+                                    if (nll > 0)
+                                    {
+                                        list.RemoveRange(list.Count - nll - 1, nll);
+                                    }
+                                }
+                                else { break; }
+                            }
+                                dic.Add(theEntry.Name,list.ToArray());
+                        }
+                    }
+                    s.Close();
+                }
+            }
+            catch (Exception)
+            {
+                ret = false;
+                throw;
+            }
+            return dic;
+        }
+
         /// <summary>加密压缩
         /// 
         /// </summary>
@@ -137,6 +249,53 @@ namespace hz.Comm.zip
             entry.Crc = crc.Value;
             s.PutNextEntry(entry);
             s.Write(buffer, 0, buffer.Length);
+        }
+
+        /// <summary>将指定字节写入zip流，并指定名称
+        /// 
+        /// </summary>
+        /// <param name="zipOut"></param>
+        /// <param name="filePath"></param>
+        /// <param name="sbyteFile"></param>
+        public static void writeStream(ZipOutputStream zipOut, string filePath, byte[] byteFile)
+        {
+            ZipEntry z = new ZipEntry(filePath);
+            //z.set.setMethod(ZipEntry.DEFLATED);
+            zipOut.PutNextEntry(z);
+            zipOut.Write(byteFile,0,byteFile.Length);
+        }
+        /// <summary>压缩文件，并返回压缩后文件字节
+        /// 
+        /// </summary>
+        /// <param name="fileByteArray"></param>
+        /// <returns></returns>
+        public static byte[] ZipToByte(Dictionary<string, byte[]> fileByteArray)
+        {
+            string tempFilePath = System.IO.Path.GetTempFileName();
+            ZipOutputStream zipOut = new ZipOutputStream(File.OpenWrite(tempFilePath));
+            try
+            {
+                foreach (KeyValuePair<string, byte[]> item in fileByteArray)
+                {
+                    writeStream(zipOut, item.Key, item.Value);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                zipOut.Close();
+            }
+            FileStream f = new FileStream(tempFilePath, FileMode.Open);
+            byte[] zipFileByte = new byte[f.Length];
+            f.Read(zipFileByte, 0, zipFileByte.Length);
+            f.Close();
+            f.Dispose();
+            System.IO.File.Delete(tempFilePath);
+
+            return zipFileByte;
         }
 
         /// <summary>压缩字符串

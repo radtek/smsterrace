@@ -50,3 +50,7 @@ D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.UseCtrl.ContactInfo.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.UI.FirstFrm.resources
 D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\BgProcess.dll
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.exe.manifest
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\bin\Debug\SmsTerrace.application
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.exe.manifest
+D:\My Documents\Visual Studio 2005\Projects\复件4.29 SmsTerrace\SmsTerrace\obj\Debug\SmsTerrace.application

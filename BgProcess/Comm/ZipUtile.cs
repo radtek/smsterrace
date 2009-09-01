@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 using System.Collections.Generic;
 using System.Text;
 using java.util.zip;
@@ -7,10 +8,10 @@ using com.ms.vjsharp.@struct;
 using System.IO;
 namespace hz.sms.Comm
 {
-    /// <summary>此类为调用j#的zip包实现的zip压缩
+    /// <summary>此类为调用j#的zip包实现的zip压缩,需要引用vjslib.dll
     /// 
     /// </summary>
-    public class ZipUtile
+    public class ZipUtile2
     {
         /// <summary>将指定字节写入zip流，并指定名称
         /// 
@@ -249,3 +250,4 @@ namespace hz.sms.Comm
 
     }
 }
+*/

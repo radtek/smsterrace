@@ -181,9 +181,6 @@ namespace HzTerrace.UI
 
         private void button5_Click(object sender, EventArgs e)
         {
-
-
-
             SmsTerrace.Form1 f = new SmsTerrace.Form1();
            // f.Show();
             for (int ik = 0; ik < tableLayoutPanel1.Controls.Count; ik++)
@@ -264,7 +261,9 @@ namespace HzTerrace.UI
                     titleAndDesc += ("\r\nSendDate: ");
                 }
                 dic = mmsManage.MmsXmlToDic(titleAndDesc, ph, dic);
-                byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
+               // byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
+                byte[] zipByte = hz.Comm.zip.ZipFile.ZipToByte(dic);
+
                 SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
 
                 if (!loginInfoInit())
