@@ -386,7 +386,7 @@ namespace SmsTerrace.UI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("发送异常！请重试");
+                MessageBox.Show("发送超时！");
                 Log.Error("后台发送短信时",ex.ToString());
             }
         }

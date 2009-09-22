@@ -18,13 +18,13 @@ namespace SmsTerrace.BLL
         public SmsWebServiceMirror()
             : base()
         {
-            this.Timeout = 2000;
+            this.Timeout = 30000;
            // this.Url = "http://218.241.155.67:8011/Service.asmx";
         }
         public SmsWebServiceMirror(string serviceUrl)
             : base()
         {
-            this.Timeout = 2000;
+            this.Timeout = 30000;
             this.Url = serviceUrl; 
         }
 
