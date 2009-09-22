@@ -185,10 +185,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>ProgressPanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UseCtrl\UserControl1.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI\UseCtrl\UserControl2.resx">
       <SubType>Designer</SubType>
       <DependentUpon>UserControl2.cs</DependentUpon>
@@ -293,12 +289,6 @@
     </Compile>
     <Compile Include="UI\UseCtrl\UsePanel.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\UseCtrl\UserControl1.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UI\UseCtrl\UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UseCtrl\UserControl2.cs">
       <SubType>UserControl</SubType>

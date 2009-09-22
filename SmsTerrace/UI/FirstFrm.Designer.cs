@@ -85,8 +85,10 @@
             this.textBoxX2.Border.Class = "TextBoxBorder";
             this.textBoxX2.Location = new System.Drawing.Point(315, 72);
             this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.PasswordChar = '*';
             this.textBoxX2.Size = new System.Drawing.Size(100, 21);
             this.textBoxX2.TabIndex = 3;
+            this.textBoxX2.UseSystemPasswordChar = true;
             // 
             // textBoxX3
             // 
