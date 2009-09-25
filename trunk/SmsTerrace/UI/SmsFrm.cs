@@ -66,6 +66,7 @@ namespace SmsTerrace.UI
             HzTerrace.UI.MmsCreate mc = new HzTerrace.UI.MmsCreate();
             ribbonPanel6.Controls.Add(mc);
             ribbonPanel6.EnabledChanged += new EventHandler(ribbonPanel1_EnabledChanged);
+
             InitFrm();
             if (!SmsTerrace.Comm.NetLink.IsConnected())
             {
@@ -75,6 +76,8 @@ namespace SmsTerrace.UI
         public SmsFrm()
         {
             InitializeComponent();
+            dataGridViewX1.Rows.CollectionChanged += new CollectionChangeEventHandler(Rows_CollectionChanged);
+
             panelEx4.Controls.Add(new UserControl2());
             HzTerrace.UI.MmsCreate mc = new HzTerrace.UI.MmsCreate();
             ribbonPanel6.Controls.Add(mc);
@@ -90,7 +93,7 @@ namespace SmsTerrace.UI
         
 
         void InitFrm()
-        {
+        {   
             p1b1 = panelEx1.Style.BackColor1.Color;
             p1b2 = panelEx1.Style.BackColor2.Color;
             p2b1 = panelEx2.Style.BackColor1.Color;
@@ -103,23 +106,49 @@ namespace SmsTerrace.UI
             controlContainerItem5.Control = ofp;
             ofp.SelectedTable += new OperFilePanel.SelectCol(ofp_SelectedTable);
 
+            SmsTerrace.UI.UseCtrl.AddNums mc2 = new SmsTerrace.UI.UseCtrl.AddNums();
+            controlContainerItem2.Control = mc2;
+            mc2.buttonX2.Click += new EventHandler(delegate(object p1, EventArgs p2) {
+                buttonItem16.Expanded = false; });
+            mc2.SelectedTable += new OperFilePanel.SelectCol(ofp2_SelectedTable);
             ul = UserLogin.Create();
             ul.LoginEnd += new UserLogin.loginInfo(f_LoginEnd);
             if (UserName == null || UserName.Trim().Length < 1)
             {
                 this.Text = "未登陆用户";
             }
+
+            dataGridViewX1.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridViewX1_CellFormatting);
+        }
+
+        void dataGridViewX1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.Value!=null)
+            {
+                e.Value = e.Value.ToString().Trim('\r', '\n', ' ');
+            }
         }
 
         void ofp_SelectedTable(DataTable dt)
         {
+            if (dt == null)
+                return;
             foreach (DataRow dr in dt.Rows)
             {
                  dataGridViewX1.Rows.Add(dr.ItemArray) ;
             }
             buttonItem17.Expanded=false;
         }
-
+        void ofp2_SelectedTable(DataTable dt)
+        {
+            if (dt == null)
+                return;
+            foreach (DataRow dr in dt.Rows)
+            {
+                dataGridViewX1.Rows.Add(dr.ItemArray);
+            }
+            buttonItem16.Expanded = false;
+        }
         private void qatCustomizeItem1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("1");
@@ -222,15 +251,30 @@ namespace SmsTerrace.UI
                 MessageBox.Show("请先填写发送账号");
                 return;
             }
-      
+            if (userExCode=="16")
+            {
+                MessageBox.Show("业务代码错误");
+                return;
+            }
+             
             StringBuilder phoneNumList = new StringBuilder();
+            int num = 0;
             foreach (DataGridViewRow itemRow in dataGridViewX1.Rows)
             {
                 string phoneNum = itemRow.Cells[0].Value as string;
+                if (string.IsNullOrEmpty(phoneNum))
+                {
+                    continue;
+                }   
                 phoneNumList.Append(phoneNum);
                 phoneNumList.AppendLine(",");
+                num++;
             }
-
+            if (num>10000)
+            {
+                MessageBox.Show("号码数量过多！");
+                return;
+            }
             try
             {
                 ribbonPanel1.Enabled = false;
@@ -438,9 +482,13 @@ namespace SmsTerrace.UI
        void dataGridViewX3Refresh()
        {
            DataTable dt = smsOperate.GetSmsInfo("");
+           
           DataView dv= dt.DefaultView;
            dv.Sort = "编号 DESC";
-          dataGridViewX3.DataSource = dv;
+           dataGridViewX3.DataSource = dv; 
+
+           
+           
            labelX2.Text = "共" + dt.Rows.Count + "行";
            labelX21.Text = " 已显示" + dv.Count + "行";
        }
@@ -509,10 +557,37 @@ namespace SmsTerrace.UI
                 }
                 catch (Exception)
                 {
+                } 
+            } 
+        }
+
+
+
+        void Rows_CollectionChanged(object sender, CollectionChangeEventArgs e)
+        {
+            m2ToolStripMenuItem.Text = "共" + (dataGridViewX1.Rows.Count-1) + "行";
+        }
+
+        private void dataGridViewX3_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dataGridViewX3.Columns[e.ColumnIndex].Name=="号码")
+            {
+                if (e.Value != null)
+                {
+                    dataGridViewX3[e.ColumnIndex, e.RowIndex].ToolTipText = e.Value.ToString();
+                    e.Value = e.Value.ToString().Split(new string[] { }, StringSplitOptions.RemoveEmptyEntries).Length.ToString();
+                    e.FormattingApplied = true;
                 }
-                
             }
-            
+        }
+        TxtShowFrm ts = new TxtShowFrm();
+        private void dataGridViewX3_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            if (dataGridViewX3.Columns[e.ColumnIndex].Name == "号码")
+            {
+                ts.ShowDialog(dataGridViewX3[e.ColumnIndex, e.RowIndex].Value.ToString(), "号码详细");
+            }
         }
 
 

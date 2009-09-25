@@ -20,6 +20,8 @@ namespace HzTerrace.UI
         string mmsUserId;
         string mmsPwd ;
         int mmsBid ;
+
+        SmsTerrace.ClientWebServer.ClientServer fk ;
         public MmsCreate()
         {
             InitializeComponent();
@@ -27,6 +29,14 @@ namespace HzTerrace.UI
             idt.Columns.Add("号码");
             dataGridViewX1.DataSource = idt;
             dateTimeInput1.Value = DateTime.Now.AddHours(2);
+            dataGridViewX1.Rows.CollectionChanged += new CollectionChangeEventHandler(Rows_CollectionChanged);
+            fk = new SmsTerrace.ClientWebServer.ClientServer();
+            fk.Timeout = HzTerrace.Comm.InitInfo.SendTimeout*2;
+        }
+
+        void Rows_CollectionChanged(object sender, CollectionChangeEventArgs e)
+        {
+            m5ToolStripMenuItem.Text = "共"+(dataGridViewX1.Rows.Count-1)+"行";
         }
 
        bool  loginInfoInit()
@@ -131,6 +141,13 @@ namespace HzTerrace.UI
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            if (mmsBid!=16)
+            {
+                MessageBox.Show("业务代码错误！");
+                return;
+            }
+
             Dictionary<string, byte[]> dic = new Dictionary<string, byte[]>();
             int totalSize = 0;
             for (int i = 0; i < mmsfArray.Count; i++)
@@ -144,9 +161,9 @@ namespace HzTerrace.UI
                     dic.Add(ext, fileByte);
                 }
             }
-            if (totalSize > InitInfo.MMS_MAX_SIZE)
+            if (totalSize > HzTerrace.Comm.InitInfo.MMS_MAX_SIZE)
             {
-                MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (InitInfo.MMS_MAX_SIZE / 1024) + "KB");
+                MessageBox.Show("MMS内容总大小为" + (totalSize / 1024) + "KB," + "超过限制大小！允许最大MMS为" + (HzTerrace.Comm.InitInfo.MMS_MAX_SIZE / 1024) + "KB");
                 return;
             }
             else if (totalSize<1)
@@ -223,6 +240,11 @@ namespace HzTerrace.UI
                     MessageBox.Show("请导入号码！");
                     return;
                 }
+                else if (dataGridViewX1.Rows.Count > 10000)
+                {
+                    MessageBox.Show("号码过多！");
+                    return;
+                }
                 Dictionary<string, byte[]> dic = e.Argument as Dictionary<string, byte[]>;
                 MmsManage mmsManage = new MmsManage();
 
@@ -231,7 +253,7 @@ namespace HzTerrace.UI
                 StringBuilder sbu = new StringBuilder();
                 foreach (DataGridViewRow item in dataGridViewX1.Rows)
                 {
-                    if (item.Cells.Count < 1 || item.Cells[0].Value == null)
+                    if (item.Cells.Count < 1 ||string.IsNullOrEmpty( (item.Cells[0].Value as string)))
                         continue;
                     if (PhoneNumValidate(item.Cells[0].Value.ToString().Trim()) < 0)
                     {
@@ -264,7 +286,7 @@ namespace HzTerrace.UI
                // byte[] zipByte = hz.sms.Comm.ZipUtile.ZipToByte(dic);
                 byte[] zipByte = hz.Comm.zip.ZipFile.ZipToByte(dic);
 
-                SmsTerrace.ClientWebServer.ClientServer fk = new SmsTerrace.ClientWebServer.ClientServer();
+               
 
                 if (!loginInfoInit())
                     return;
