@@ -68,6 +68,7 @@
             // 
             // textBoxX1
             // 
+            this.textBoxX1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             // 
             // 
             // 
@@ -150,27 +151,27 @@
             this.labelX4.Size = new System.Drawing.Size(423, 54);
             this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.labelX4.TabIndex = 4;
-            this.labelX4.Text = "浩众传媒,以高效、稳定、快速从根本上满足企业精准投放,高效宣传的需求,\r\n可针对不同地区,行业,不同层次人群进行推广13592004132";
+            this.labelX4.Text = "晨信传媒,以高效、稳定、快速从根本上满足企业精准投放,高效宣传的需求,\r\n可针对不同地区,行业,不同层次人群进行推广15074085855 ";
             // 
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
             this.labelX5.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelX5.Location = new System.Drawing.Point(80, 2);
+            this.labelX5.Location = new System.Drawing.Point(89, 2);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(45, 194);
+            this.labelX5.Size = new System.Drawing.Size(37, 194);
             this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.labelX5.TabIndex = 4;
-            this.labelX5.Text = "浩众无线传媒";
+            this.labelX5.Text = "晨信无线传媒";
             this.labelX5.WordWrap = true;
             // 
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
             this.labelX6.Font = new System.Drawing.Font("宋体", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.labelX6.Location = new System.Drawing.Point(170, 59);
+            this.labelX6.Location = new System.Drawing.Point(179, 45);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(45, 191);
+            this.labelX6.Size = new System.Drawing.Size(41, 191);
             this.labelX6.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.labelX6.TabIndex = 4;
             this.labelX6.Text = "专业铸就完美";

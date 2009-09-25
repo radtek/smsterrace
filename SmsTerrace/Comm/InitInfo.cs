@@ -5,10 +5,16 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.Xml;
 using  System.IO;
-namespace hz.sms.Comm
+namespace HzTerrace.Comm
 {
-    class InitInfo
+    internal class InitInfo
     {
+
+        static InitInfo()
+        {
+            InitSendTimeout();
+        }
+
         #region Service
         /*
         public static readonly string USER_ID = getUSER_ID; //用户名
@@ -163,7 +169,7 @@ namespace hz.sms.Comm
         #region client
 
 
-      static  XmlDocument InitXmlInfo(string path)
+        static XmlDocument InitXmlInfo(string path)
         {
             XmlDocument xml = new XmlDocument();
             if (File.Exists(path))
@@ -187,41 +193,90 @@ namespace hz.sms.Comm
                 return xmlDoc;
             }
         }
-       static int mmsMaxSize;
-        public static  int MMS_MAX_SIZE
+        static int mmsMaxSize;
+        public static int MMS_MAX_SIZE
         {
             get
             {
-                if (mmsMaxSize > 0 && mmsMaxSize<102401)
+                if (mmsMaxSize > 0 && mmsMaxSize < 102401)
                 {
                     return mmsMaxSize;
                 }
                 if (XmlDoc == null)
                 {
-                    return 1024 * 100;
+                    return 1024 * 50;
                 }
                 else
                 {
                     //  XmlNodeList nodeList = XmlDoc.SelectNodes("");
                     //  string val =int.Parse(nodeList[0].Attributes["value"].Value);
                     string mmsSizeStr = ConfigurationManager.AppSettings["mmsMaxSize"];
-                    if (mmsSizeStr==null)
+                    if (mmsSizeStr == null)
                     {
-                        return 1024 * 100;
+                        return 1024 * 50;
                     }
                     int mmsSize = int.Parse(mmsSizeStr);
-                   if (mmsSize>100||mmsSize<1)
-                   {
-                       mmsSize = 100 * 1024;
-                   }
-                   else
-                   {
-                       mmsSize = mmsSize * 1024;
-                   }
-                   mmsMaxSize = mmsSize;
-                   return mmsMaxSize;
+                    if (mmsSize > 100 || mmsSize < 1)
+                    {
+                        mmsSize = 50 * 1024;
+                    }
+                    else
+                    {
+                        mmsSize = mmsSize * 1024;
+                    }
+                    mmsMaxSize = mmsSize;
+                    return mmsMaxSize;
                 }
             }
+        }
+        static private int sendTimeout;
+
+        static internal int SendTimeout
+        {
+            get { return sendTimeout; }
+        }
+
+        static int InitSendTimeout()
+        {
+            string sendto = ConfigurationManager.AppSettings["SendTimeout"];
+            try
+            {
+                sendTimeout = (int.Parse(sendto)) * 1000;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("获取SendTimeout失败，采用默认值30：" + ex.ToString());
+                sendTimeout = 30 * 1000;
+            }
+            return sendTimeout;
+        }
+
+        static public System.Drawing.Image LandBg()
+        {
+            try
+            {
+                string path = ConfigurationManager.AppSettings["LandBg"];
+                if (string.IsNullOrEmpty(path))
+                {
+                    return null;
+                }
+                System.Drawing.Image img = System.Drawing.Image.FromFile(path);
+                return img;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+        static public string GetLandTopTxt()
+        {
+            string str = ConfigurationManager.AppSettings["LandTopTxt"];
+            return str;
+        }
+        static public string GetLandBottomTxt()
+        {
+            string str = ConfigurationManager.AppSettings["LandBottomTxt"];
+            return str;
         }
 
         #endregion

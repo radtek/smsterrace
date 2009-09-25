@@ -73,9 +73,6 @@
     <Compile Include="BLL\LogInfoManage.cs" />
     <Compile Include="BLL\MmsManage.cs" />
     <Compile Include="BLL\relation.cs" />
-    <Compile Include="Class1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Class2.cs" />
     <Compile Include="Comm\ConfigHelper.cs" />
     <Compile Include="Comm\DataCache.cs" />
@@ -169,6 +166,14 @@
       <DependentUpon>SmsFrm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\TxtShowFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TxtShowFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseCtrl\AddNums.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddNums.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UseCtrl\AddressBook.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AddressBook.cs</DependentUpon>
@@ -192,6 +197,10 @@
     <EmbeddedResource Include="UI\UseCtrl\UserLogin.resx">
       <SubType>Designer</SubType>
       <DependentUpon>UserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UseFrm\AddNumsFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddNumsFrm.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -261,6 +270,18 @@
     <Compile Include="UI\SmsFrm.Designer.cs">
       <DependentUpon>SmsFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UseCtrl\TxtShowFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\TxtShowFrm.Designer.cs">
+      <DependentUpon>TxtShowFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseCtrl\AddNums.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UseCtrl\AddNums.Designer.cs">
+      <DependentUpon>AddNums.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UseCtrl\AddressBook.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -301,6 +322,12 @@
     </Compile>
     <Compile Include="UI\UseCtrl\UserLogin.Designer.cs">
       <DependentUpon>UserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UseFrm\AddNumsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UseFrm\AddNumsFrm.Designer.cs">
+      <DependentUpon>AddNumsFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Web References\ClientWebServer\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -7,7 +7,7 @@ using log4net;
 
 namespace hz.sms.Comm
 {
-  public  class InitInfo
+  internal  class InitInfo
     {
         public static readonly ILog Log = LogManager.GetLogger("AllLog"); 
 

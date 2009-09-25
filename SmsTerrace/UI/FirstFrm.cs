@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
+using HzTerrace.Comm;
 
 namespace SmsTerrace.UI
 {
@@ -14,6 +15,18 @@ namespace SmsTerrace.UI
         public FirstFrm()
         {
             InitializeComponent();
+            if (InitInfo.LandBg() != null)
+            {
+                this.BackgroundImage = InitInfo.LandBg();
+            }
+            if (InitInfo.GetLandTopTxt() != null)
+            {
+                this.labelX5.Text = InitInfo.GetLandTopTxt();
+            }
+            if (InitInfo.GetLandBottomTxt() != null)
+            {
+                this.labelX4.Text = InitInfo.GetLandTopTxt();
+            }
         }
         SmsFrm firFrm;
         public FirstFrm(SmsFrm chFrm)

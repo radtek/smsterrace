@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -62,6 +62,7 @@
             this.删除错误号码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.m5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.integerInput1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).BeginInit();
@@ -129,8 +130,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 196);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 195F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(680, 197);
             this.tableLayoutPanel1.TabIndex = 8;
             this.tableLayoutPanel1.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlAdded);
             this.tableLayoutPanel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.tableLayoutPanel1_ControlRemoved);
@@ -314,14 +315,14 @@
             // 
             this.dataGridViewX1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewX1.ContextMenuStrip = this.contextMenuStrip1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
@@ -340,10 +341,11 @@
             this.toolStripSeparator1,
             this.全选ToolStripMenuItem,
             this.验证号码ToolStripMenuItem,
-            this.删除错误号码ToolStripMenuItem});
+            this.删除错误号码ToolStripMenuItem,
+            this.m5ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.ShowImageMargin = false;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(122, 120);
             // 
             // 删除选中行ToolStripMenuItem
             // 
@@ -434,6 +436,12 @@
             this.dateTimeInput1.TabIndex = 19;
             this.dateTimeInput1.Value = new System.DateTime(2009, 7, 20, 0, 0, 0, 0);
             // 
+            // m5ToolStripMenuItem
+            // 
+            this.m5ToolStripMenuItem.Name = "m5ToolStripMenuItem";
+            this.m5ToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.m5ToolStripMenuItem.Text = "共0行";
+            // 
             // MmsCreate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -506,5 +514,6 @@
         private System.Windows.Forms.ToolStripMenuItem 删除错误号码ToolStripMenuItem;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
+        private System.Windows.Forms.ToolStripMenuItem m5ToolStripMenuItem;
     }
 }
